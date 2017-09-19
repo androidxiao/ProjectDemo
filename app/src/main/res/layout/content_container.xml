@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!--<android.support.design.widget.CoordinatorLayout-->
+                                                     <!--android:layout_width="match_parent"-->
+                                                     <!--android:layout_height="match_parent">-->
+
+        <!--<android.support.design.widget.AppBarLayout-->
+            <!--android:id="@+id/appbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/white"-->
+            <!--app:elevation="0dp">-->
+            <!--&lt;!&ndash;android:fitsSystemWindows="true"&ndash;&gt;-->
+
+            <!--<android.support.design.widget.CollapsingToolbarLayout-->
+                <!--android:id="@+id/collapsingToolbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--app:contentScrim="@color/white"-->
+                <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:fitsSystemWindows="true"-->
+                    <!--android:orientation="vertical"-->
+                    <!--app:layout_collapseMode="pin">-->
+
+                    <!--<include-->
+                        <!--layout="@layout/add_layout_container"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+
+                <!--</LinearLayout>-->
+
+
+            <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+        <!--</android.support.design.widget.AppBarLayout>-->
+
+        <!--<include-->
+            <!--android:id="@+id/setll"-->
+            <!--layout="@layout/set_layout"-->
+            <!--android:visibility="gone"-->
+            <!--/>-->
+
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical"
+                app:layout_collapseMode="pin">
+
+                <include
+                layout="@layout/add_layout_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/id_recycleview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
+        <include
+            android:id="@+id/setll"
+            layout="@layout/set_layout"
+            />
+
+
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

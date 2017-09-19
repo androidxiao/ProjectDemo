@@ -1,0 +1,242 @@
+{
+    "status": 0,
+    "msg": "success",
+    "data": {
+        "bannerInfo": {
+            "photos": [],
+            "status": "已售出",
+            "buyOrderId": "CG20161024001",
+            "outOrderId": "CK20170123839",
+            "saleOrderId": "XS20170209780"
+        },
+        "detailInfo": {
+            "iBuyOrder": [
+                {
+                    "title": "采购单号：CG20161024001",
+                    "list": [
+                        [
+                            {
+                                "label": "牛只状态",
+                                "value": "已售出"
+                            },
+                            {
+                                "label": "牛只编号",
+                                "value": "2016101401"
+                            },
+                            {
+                                "label": "牛只品种",
+                                "value": "西门塔尔牛"
+                            },
+                            {
+                                "label": "牛只性别",
+                                "value": "公"
+                            }
+                        ],
+                        [
+                            {
+                                "label": "采购地点",
+                                "value": "很困惑"
+                            },
+                            {
+                                "label": "采购人",
+                                "value": ""
+                            },
+                            {
+                                "label": "采购时间",
+                                "value": "-0001-11-30 00:00"
+                            },
+                            {
+                                "label": "卖家名称",
+                                "value": "无"
+                            },
+                            {
+                                "label": "卖家电话",
+                                "value": "无"
+                            }
+                        ],
+                        [
+                            {
+                                "label": "买入价格",
+                                "value": "1000.00元"
+                            },
+                            {
+                                "label": "买入单价",
+                                "value": "10.56元"
+                            },
+                            {
+                                "label": "牛只体重",
+                                "value": "47.35kg"
+                            },
+                            {
+                                "label": "结算方式",
+                                "value": "现结"
+                            },
+                            {
+                                "label": "采购运输费用",
+                                "value": "152.00元"
+                            },
+                            {
+                                "label": "其它采购费用",
+                                "value": "0.00元"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "iOutOrder": [
+                {
+                    "title": "货单号：CK20170123839",
+                    "list": [
+                        [
+                            {
+                                "label": "出库地址",
+                                "value": "北京市难道你能否"
+                            },
+                            {
+                                "label": "出库时间",
+                                "value": "2017-01-23 10:56"
+                            },
+                            {
+                                "label": "出库人",
+                                "value": "李测试"
+                            },
+                            {
+                                "label": "司机姓名",
+                                "value": "无"
+                            },
+                            {
+                                "label": "司机电话",
+                                "value": "无"
+                            },
+                            {
+                                "label": "运输车牌号",
+                                "value": "无"
+                            }
+                        ],
+                        [
+                            {
+                                "label": "每日在库饲养费",
+                                "value": "0.00 元"
+                            },
+                            {
+                                "label": "在库饲养费合计",
+                                "value": "0.00 元"
+                            },
+                            {
+                                "label": "出库运输费用",
+                                "value": "0.00 元"
+                            },
+                            {
+                                "label": "其它出库费用",
+                                "value": "0.00 元"
+                            }
+                        ],
+                        [
+                            {
+                                "label": "收货地址",
+                                "value": "天津市你的难道你能否"
+                            },
+                            {
+                                "label": "收货时间",
+                                "value": "2017-02-09 16:39"
+                            },
+                            {
+                                "label": "收货人",
+                                "value": "daqing"
+                            },
+                            {
+                                "label": "收货人电话",
+                                "value": "12121212121"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "iSaleOrder": [
+                {
+                    "title": "销售单号：XS20170209780",
+                    "list": [
+                        [
+                            {
+                                "label": "售出时间",
+                                "value": "2017-02-09 17:16"
+                            },
+                            {
+                                "label": "销售人",
+                                "value": "李测试"
+                            },
+                            {
+                                "label": "是否结算",
+                                "value": "未结算"
+                            },
+                            {
+                                "label": "结算方式",
+                                "value": "后结"
+                            },
+                            {
+                                "label": "客户名称",
+                                "value": "ggh"
+                            },
+                            {
+                                "label": "客户电话",
+                                "value": "无"
+                            },
+                            {
+                                "label": "客户地址",
+                                "value": "无"
+                            }
+                        ],
+                        [
+                            {
+                                "label": "售出价格",
+                                "value": "0.00元"
+                            },
+                            {
+                                "label": "售出单价",
+                                "value": "0.00元/斤"
+                            },
+                            {
+                                "label": "售出牛只体重",
+                                "value": "无"
+                            },
+                            {
+                                "label": "其它销售费用",
+                                "value": "3.03元"
+                            },
+                            {
+                                "label": "每日在售饲养费",
+                                "value": "15.00元"
+                            },
+                            {
+                                "label": "在售饲养费合计",
+                                "value": "25875.00元"
+                            },
+                            {
+                                "label": "净利润",
+                                "value": "-1170.03元"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "otherInfo": []//与前面的格式相同
+        },
+        "details": {
+            "id": 229,
+            "buyer": "",
+            "buyOrderId": "CG20161024001",
+            "idno": "2016101401",
+            "kind": 1,
+            "kindDisplay": "西门塔尔牛",
+            "sex": 1,
+            "totalPrice": 1000,
+            "unitPrice": 10.56,
+            "weight": 47.35,
+            "defaultPic": "",
+            "photos": [],
+            "status": 5,
+            "sourceName": "",
+            "sourcePhone": ""
+        }
+    }
+}

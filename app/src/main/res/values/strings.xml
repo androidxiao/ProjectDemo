@@ -1,0 +1,17 @@
+<resources>
+    <!-- 配置文件已经添加了app_name,这里就不需要了 -->
+    <!--<string name="app_name">ProjectDemo</string>-->
+
+    <string name="my_api_key">ec01f8c2eb6ac402f2ca026dc2d9b8fd</string>
+    <string name="error_msg">Sorry! Couldn\'t fetch movies.</string>
+    <string name="btn_retry">Retry</string>
+    <string name="error_msg_no_internet">Not connected to internet</string>
+    <string name="error_msg_timeout">The server took too long to respond</string>
+    <string name="error_msg_unknown">An unexpected error occurred</string>
+    <string name="tap_to_reload">Tap to reload</string>
+
+    <string name="hint_email">输入您的电子邮件</string>
+    <string name="hint_password">输入密码</string>
+    <string name="hint_empty">此字段不能为空</string>
+    <string name ="error_email">请输入有效的电子邮件</string>
+</resources>

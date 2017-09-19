@@ -1,0 +1,39 @@
+//http://blog.csdn.net/u014651216/article/details/54602354--->具体配置方法
+//用来解决第三库依赖与项目依赖冲突
+
+ext {
+
+    //系统配置
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.0",
+            minSdkVersion    : 15,
+            targetSdkVersion : 25,
+            versionCode      : 1,
+            versionName      : "1.7.4"
+    ]
+
+    //依赖配置。可以添加可能使用的依赖，需要用，就直接引用就好了。
+    dependencies = [
+            supportV7       : 'com.android.support:appcompat-v7:25.3.1',
+            supportV4       : 'com.android.support:support-v4:25.3.1',
+            constraintlayout: 'com.android.support.constraint:constraint-layout:1.0.2',
+            multidex        : 'com.android.support:multidex:1.0.1',
+            design          : 'com.android.support:design:25.3.1',
+            recyclerview    : 'com.android.support:recyclerview-v7:25.3.1',
+            cardview        : 'com.android.support:cardview-v7:25.3.1',
+            glide           : 'com.github.bumptech.glide:glide:3.7.0',//在测试recycleView loadmore中使用了，正式项目使用4.0.0
+//            glide           : 'com.github.bumptech.glide:glide:4.0.0',
+            okhttp3         : 'com.squareup.okhttp3:okhttp:3.8.1',
+            eventbus        : 'org.greenrobot:eventbus:3.0.0',
+            stetho          : 'com.facebook.stetho:stetho:1.5.0',
+            stethoRealm     : 'com.uphyca:stetho_realm:2.1.0',
+            gson            : 'com.google.code.gson:gson:2.8.1',
+            rxjava          : 'io.reactivex:rxjava:1.1.0',
+            rxandroid       : 'io.reactivex:rxandroid:1.1.0',
+            retrofit        : 'com.squareup.retrofit2:retrofit:2.1.0',
+            converterGson   : 'com.squareup.retrofit2:converter-gson:2.1.0',
+            adapterRxjava   : 'com.squareup.retrofit2:adapter-rxjava:2.1.0',
+            okhttp3Log      : 'com.squareup.okhttp3:logging-interceptor:3.4.0'
+    ]
+}

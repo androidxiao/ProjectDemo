@@ -1,0 +1,4 @@
+<resources>
+    <!-- 配置文件已经添加了app_name,这里就不需要了 -->
+    <!--<string name="app_name">ProjectDemoFree</string>-->
+</resources>

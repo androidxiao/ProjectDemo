@@ -1,0 +1,116 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+def config = rootProject.ext.android//配置
+def librarys = rootProject.ext.dependencies//依赖
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        applicationId "cn.project.demo.com"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        //为了过滤realm中多余的so文件（如果不过滤，编译的东西会比较多）
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+    }
+
+
+    productFlavors {
+
+        free {
+            //这里的id不会和buildTypes中的id覆盖，两个是往后面追加"cn.project.demo.com.free.test"
+            applicationIdSuffix ".free"
+            minSdkVersion 14
+            targetSdkVersion 23
+            versionCode 2
+
+        }
+
+
+        paid {
+            applicationIdSuffix ".paid"
+            minSdkVersion 14
+            targetSdkVersion 23
+            versionCode 4
+        }
+    }
+
+    //签名--->微信分享、登录，就不用打包了。直接运行即可。
+    signingConfigs {
+        //这里debug和release其实是一样的
+//        debug{
+//            storeFile file("签名文件路径")
+//            storePassword "签名文件存储密码"
+//            keyAlias "签名文件标识"
+//            keyPassword "签名文件密码"
+//        }
+//        release{
+//            storeFile file("签名文件路径")
+//            storePassword "签名文件存储密码"
+//            keyAlias "签名文件标识"
+//            keyPassword "签名文件密码"
+//        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".test"
+//            versionNameSuffix ".testdebug"
+            zipAlignEnabled false
+            minifyEnabled false
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField("String", "BASE_URL", '"http://alpha.i.cow.bgg.so"')
+            buildConfigField("String", "H5_URL", '"http://alpha.i.cow.bgg.so"')
+            buildConfigField("String", "PAY_URL", '"http://alpha.shop.cow.bgg.so"')
+            resValue("string", "app_name", "ProjectDemoDebug")
+//            signingConfig signingConfigs.debug
+        }
+        release {
+            zipAlignEnabled true
+//            versionNameSuffix ".testrelease"
+            minifyEnabled true
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            buildConfigField("String", "BASE_URL", '"releaseurl"')
+            buildConfigField("String", "H5_URL", '"releaseurl"')
+            resValue("string", "app_name", "ProjectDemoRelease")
+//            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //启用dataBinding
+    dataBinding {
+        enabled = true
+    }
+
+    sourceSets {
+        main {
+            //jni库的调用会到资源文件夹下libs里面找so文件
+            jniLibs.srcDirs = ['lib']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile librarys.supportV7
+    compile librarys.supportV4
+    compile librarys.constraintlayout
+    compile librarys.design
+    compile librarys.recyclerview
+    compile librarys.cardview
+    compile librarys.stetho
+    compile librarys.stethoRealm
+    compile librarys.gson
+    compile librarys.rxjava
+    compile librarys.rxandroid
+    compile librarys.retrofit
+    compile librarys.converterGson
+    compile librarys.adapterRxjava
+    compile librarys.okhttp3Log
+    compile librarys.glide
+}
