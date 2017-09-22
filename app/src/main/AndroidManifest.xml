@@ -81,6 +81,14 @@
         </activity>
 
         <activity android:name=".activity.TextInputLayoutActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name="cn.swiperefreshlayout.demo.cn.SwipeRefreshLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

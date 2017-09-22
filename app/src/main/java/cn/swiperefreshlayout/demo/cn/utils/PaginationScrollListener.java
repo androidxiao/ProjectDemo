@@ -1,9 +1,7 @@
-package cn.recyclerview.loadmore.com.utils;
+package cn.swiperefreshlayout.demo.cn.utils;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import cn.project.demo.com.utils.LogUtil;
 
 /**
  * Created by chawei on 2017/9/16.
@@ -32,7 +30,6 @@ public abstract class PaginationScrollListener extends RecyclerView.OnScrollList
         if (!isLoading() && !isLastPage()) {
             if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
                     && firstVisibleItemPosition >= 0) {
-                LogUtil.debug("11111111111");
                 loadMoreItems();
             }
         }

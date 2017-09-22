@@ -24,10 +24,10 @@ public class CoordinatorActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.login_constraint_layout);
-        mRv = (RecyclerView) findViewById(R.id.id_recycleview);
-        initRecycler();
-        initListener();
+        setContentView(R.layout.swipe_item_progress);
+//        mRv = (RecyclerView) findViewById(R.id.id_recycleview);
+//        initRecycler();
+//        initListener();
 
     }
 

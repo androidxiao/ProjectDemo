@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/header_layout"
+        layout="@layout/header_title_layout"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/id_line2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="15dp"
+        android:background="#d71345"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"/>
+
+    <TextView
+        android:id="@+id/id_tv_choose"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="right|center"
+        android:text="已选"
+        app:layout_constraintHorizontal_weight="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/id_tv_choosed"
+        app:layout_constraintTop_toBottomOf="@+id/id_line2"/>
+
+    <TextView
+        android:id="@+id/id_tv_choosed"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="left|center"
+        android:text="(0张/可选0张)"
+        app:layout_constraintHorizontal_weight="0.3"
+        app:layout_constraintLeft_toRightOf="@+id/id_tv_choose"
+        app:layout_constraintRight_toLeftOf="@+id/id_line1"
+        app:layout_constraintTop_toBottomOf="@+id/id_line2"/>
+
+    <View
+        android:id="@+id/id_line1"
+        android:layout_width="0.5dp"
+        android:layout_height="60dp"
+        android:background="#a4a4a4"
+        app:layout_constraintLeft_toRightOf="@+id/id_tv_choosed"
+        app:layout_constraintRight_toLeftOf="@+id/id_tv_sure_choose"
+        app:layout_constraintTop_toBottomOf="@+id/id_line2"/>
+
+    <TextView
+        android:id="@+id/id_tv_sure_choose"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="确认选择"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/id_line1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_line2"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="#d71345"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_choose"/>
+
+</android.support.constraint.ConstraintLayout>

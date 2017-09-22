@@ -241,13 +241,13 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void removeLoadingFooter() {
         isLoadingAdded = false;
 
-        int position = movieResults.size() - 1;
-        Result result = getItem(position);
-
-        if (result != null) {
-            movieResults.remove(position);
-            notifyItemRemoved(position);
-        }
+//        int position = movieResults.size() - 1;
+//        Result result = getItem(position);
+//
+//        if (result != null) {
+//            movieResults.remove(position);
+//            notifyItemRemoved(position);
+//        }
     }
 
     public Result getItem(int position) {
