@@ -35,6 +35,7 @@ ext {
             retrofit        : 'com.squareup.retrofit2:retrofit:2.1.0',
             converterGson   : 'com.squareup.retrofit2:converter-gson:2.1.0',
             adapterRxjava   : 'com.squareup.retrofit2:adapter-rxjava:2.1.0',
-            okhttp3Log      : 'com.squareup.okhttp3:logging-interceptor:3.4.0'
+            okhttp3Log      : 'com.squareup.okhttp3:logging-interceptor:3.4.0',
+            easyPermissions : 'pub.devrel:easypermissions:1.0.0'
     ]
 }

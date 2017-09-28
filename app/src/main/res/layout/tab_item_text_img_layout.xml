@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="horizontal"
+    android:paddingLeft="15dp"
+    android:paddingRight="5dp">
+
+    <TextView
+        android:id="@+id/id_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="标题"
+        />
+
+    <ImageView
+        android:id="@+id/id_iv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@mipmap/below_arrow_icon"
+        />
+</LinearLayout>
+
+    <!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/id_tv_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:layout_constraintRight_toLeftOf="@+id/id_guide_line"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--tools:text="标题"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/id_iv_title"-->
+    <!--/>-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/id_iv_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--app:layout_constraintLeft_toLeftOf="@+id/id_guide_line"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--tools:src="@mipmap/below_arrow_icon"/>-->
+    <!---->
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/id_guide_line"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"-->
+    <!--app:layout_constraintGuide_percent="0.5"-->
+    <!--/>-->
+    <!--</android.support.constraint.ConstraintLayout>-->

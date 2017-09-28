@@ -22,6 +22,8 @@ import cn.swiperefreshlayout.demo.cn.utils.PaginationScrollListener;
 
 /**
  * Created by chawei on 2017/9/21.
+ *
+ * SwipeRefreshLayout配合RecycleView下拉刷新，和自己写的上拉加载更多
  */
 
 public class SwipeRefreshLayoutActivity extends BaseActivity {

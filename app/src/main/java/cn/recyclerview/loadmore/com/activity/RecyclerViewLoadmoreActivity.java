@@ -31,6 +31,8 @@ import retrofit2.Response;
 
 /**
  * Created by chawei on 2017/9/16.
+ *
+ * recycleView加载更多（数据来源于网络）
  */
 
 public class RecyclerViewLoadmoreActivity extends AppCompatActivity implements PaginationAdapterCallback {

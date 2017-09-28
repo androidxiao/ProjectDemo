@@ -18,6 +18,8 @@ import io.realm.RealmObject;
 
 /**
  * Created by chawei on 2017/8/29.
+ *
+ * android realm数据库使用基本用法
  */
 
 public class Realm1Activity extends AppCompatActivity {

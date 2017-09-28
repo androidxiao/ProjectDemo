@@ -10,6 +10,8 @@ import io.realm.RealmSchema;
 
 /**
  * Created by chawei on 2017/8/30.
+ *
+ * realm升级/降级配置文件
  */
 
 public class MyConfigMigration implements RealmMigration {

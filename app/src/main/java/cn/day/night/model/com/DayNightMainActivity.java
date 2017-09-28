@@ -11,6 +11,8 @@ import cn.project.demo.com.R;
 
 /**
  * Created by chawei on 2017/9/18.
+ *
+ * 日间/夜间模式的主界面
  */
 
 public class DayNightMainActivity extends AppCompatActivity implements View.OnClickListener{
