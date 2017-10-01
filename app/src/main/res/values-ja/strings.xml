@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="welcome">歓迎</string>
+    <string name="email">電子メールアドレス</string>
+    <string name="password">パスワード</string>
+    <string name="login">ログイン</string>
+    <string name="signup">アカウントをお持ちでない場合は？サインアップ</string>
+
+</resources>

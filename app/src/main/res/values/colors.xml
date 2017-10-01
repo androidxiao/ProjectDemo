@@ -1,11 +1,16 @@
 <resources>
 
 
-
     <color name="placeholder_grey">#d71345</color>
     <color name="placeholder_grey_20">#20d71345</color>
     <color name="colorBack">#263238</color>
     <color name="buttoncolor">#00838F</color>
     <color name="textColor">#ffffff</color>
     <color name="colorHint">#546E7A</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="bg_gradient_start">#b21331</color>
+    <color name="bg_gradient_end">#820d2a</color>
+    <color name="bg_button_login">#380813</color>
 </resources>

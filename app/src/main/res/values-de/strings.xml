@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="welcome">Willkommen!</string>
+    <string name="email">Email Addresse</string>
+    <string name="password">passowrd</string>
+    <string name="login">Login</string>
+    <string name="signup">müssen nicht angemeldet? Anmeldung</string>
+
+</resources>

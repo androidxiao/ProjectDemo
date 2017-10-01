@@ -14,4 +14,11 @@
     <string name="hint_password">输入密码</string>
     <string name="hint_empty">此字段不能为空</string>
     <string name ="error_email">请输入有效的电子邮件</string>
+
+
+    <string name="welcome">Welcome!</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Don\'t have account? Sign Up</string>
 </resources>
