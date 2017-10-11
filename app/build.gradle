@@ -5,6 +5,7 @@ def librarys = rootProject.ext.dependencies//依赖
 android {
     compileSdkVersion config.compileSdkVersion
     buildToolsVersion config.buildToolsVersion
+    project.archivesBaseName = "自定义Name"
     defaultConfig {
         applicationId "cn.project.demo.com"
         minSdkVersion config.minSdkVersion
@@ -79,6 +80,12 @@ android {
             resValue("string", "app_name", "ProjectDemoRelease")
 //            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all{
+                variant->variant.outputs.each{
+                    output->output.outputFile=new File(output.outputFile.parent,output.outputFile.name.replace(".apk","-"+defaultConfig.versionName+".apk"))
+                }
+            }
         }
     }
 
@@ -87,6 +94,9 @@ android {
         enabled = true
     }
 
+    lintOptions {
+        abortOnError false
+    }
     sourceSets {
         main {
             //jni库的调用会到资源文件夹下libs里面找so文件

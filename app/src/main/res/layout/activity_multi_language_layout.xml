@@ -15,6 +15,25 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
+        <Button
+            android:id="@+id/id_btn_chinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中文"/>
+
+        <Button
+            android:id="@+id/id_btn_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="英文"/>
+
+        <Button
+            android:id="@+id/id_btn_fr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="法语"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,6 +50,7 @@
             android:orientation="vertical" >
 
             <EditText
+                android:id="@+id/editText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

@@ -13,7 +13,7 @@
     <string name="hint_email">输入您的电子邮件</string>
     <string name="hint_password">输入密码</string>
     <string name="hint_empty">此字段不能为空</string>
-    <string name ="error_email">请输入有效的电子邮件</string>
+    <string name="error_email">请输入有效的电子邮件</string>
 
 
     <string name="welcome">Welcome!</string>
@@ -21,4 +21,24 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="signup">Don\'t have account? Sign Up</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="button1">CAMERA</string>
+    <string name="button2">ACCESS_FINE_LOCATION</string>
+    <string name="button3">READ PHONE STATE</string>
+    <string name="button4">READ_CALENDAR</string>
+    <string name="button5">WRITE_CALENDAR</string>
+    <string name="button6">READ_CONTACTS</string>
+    <string name="button7">GET_ACCOUNTS</string>
+    <string name="button8">RECORD_AUDIO</string>
+    <string name="button9">ACCESS_COARSE_LOCATION</string>
+    <string name="button10">STORAGE</string>
+    <string name="button11">CALL_PHONE</string>
+    <string name="button12">READ_EXTERNAL_STORAGE</string>
+    <string name="button13">WRITE_EXTERNAL_STORAGE</string>
+
+    <!-- 设置 -->
+    <string name="s_phone">电话</string>
+    <string name="s_phone_num">13000000000</string>
+    <string name="s_phone_hint">电话提示</string>
 </resources>

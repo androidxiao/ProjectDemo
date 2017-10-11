@@ -69,5 +69,4 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onRefreshLoadData(){
 
     }
-
 }

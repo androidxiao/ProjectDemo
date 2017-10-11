@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="72dp">
+
+
+    <ImageView
+        android:id="@+id/id_iv_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/id_tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_iv_icon"
+        app:layout_constraintLeft_toRightOf="@+id/id_iv_icon"
+        app:layout_constraintTop_toTopOf="@+id/id_iv_icon"
+        tools:text="标题"/>
+
+    <TextView
+        android:id="@+id/id_tv_hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_iv_arrow"
+        app:layout_constraintRight_toLeftOf="@+id/id_iv_arrow"
+        app:layout_constraintTop_toTopOf="@+id/id_iv_arrow"
+        tools:text="提示"/>
+
+    <ImageView
+        android:id="@+id/id_iv_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_iv_icon"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_iv_icon"
+        tools:src="@mipmap/go_icon"/>
+
+    <View
+        android:id="@+id/id_view_line1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:background="#d71345"/>
+
+
+    <View
+        android:id="@+id/id_view_line2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:background="#d71345"/>
+
+
+</android.support.constraint.ConstraintLayout>

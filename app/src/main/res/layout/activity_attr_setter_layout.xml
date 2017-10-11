@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <data class="AttrBind">
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <cn.custom.widget.widget.SetterView
+            android:id="@+id/id_set_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:icon="@{@drawable/phone}"
+            app:title="@{@string/s_phone}"
+            app:arrowVisible="@{@drawable/go_icon}"
+            app:line2Visible="@{@color/c_d71345}"
+           />
+
+        <cn.custom.widget.widget.SetterView
+            android:id="@+id/id_set_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_set_1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:icon="@{@drawable/phone}"
+            app:title="@{@string/s_phone}"
+            app:hint="@{@string/s_phone_hint}"
+            app:arrowVisible="@{@drawable/go_icon}"
+            app:line2Visible="@{@color/c_d71345}"
+            />
+
+
+        <cn.custom.widget.widget.SetterView
+            android:id="@+id/id_set_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_set_2"
+            app:icon="@{@drawable/phone}"
+            app:title="@{@string/s_phone}"
+            app:hint="@{@string/s_phone_hint}"
+            app:arrowVisible="@{@drawable/go_icon}"
+            app:line2Visible="@{@color/c_d71345}"
+            />
+
+
+        <cn.custom.widget.widget.SetterView
+            android:id="@+id/id_set_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_set_3"
+            app:icon="@{@drawable/phone}"
+            app:title="@{@string/s_phone}"
+            app:hint="@{@string/s_phone_hint}"
+            app:arrowVisible="@{@drawable/go_icon}"
+            app:line2Visible="@{@color/c_d71345}"
+            />
+
+
+        <cn.custom.widget.widget.SetterView
+            android:id="@+id/id_set_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_set_4"
+            app:setIcon="@{@drawable/phone}"
+            app:setTitle="@{@string/s_phone}"
+            app:hint="@{@string/s_phone_hint}"
+            app:arrowVisible="@{@drawable/go_icon}"
+            app:line1Visible="@{@color/c_d71345}"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

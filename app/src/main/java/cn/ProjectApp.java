@@ -1,6 +1,7 @@
 package cn;
 
 import android.app.Application;
+import android.content.Context;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
@@ -8,6 +9,7 @@ import com.facebook.stetho.Stetho;
 import com.uphyca.stetho_realm.RealmInspectorModulesProvider;
 
 import cn.cn.retrofit.demo.com.utils.SharePreUtil;
+import cn.multi.language.com.utils.LocaleHelper;
 import cn.project.demo.com.tools.Constants;
 import cn.realm.demo.com.MyConfigMigration;
 import io.realm.Realm;
@@ -25,6 +27,12 @@ public class ProjectApp extends Application {
      * Realm 数据库版本
      */
     private static final int REALM_VERSION=3;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base, "zh"));
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
