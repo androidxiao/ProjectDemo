@@ -102,15 +102,7 @@
             <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name="cn.custom.widget.activity.ClearFocusEditTextActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN"/> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
-            <!-- </intent-filter> -->
-        </activity>
         <activity android:name="cn.tablayout.demo.com.activity.TabLayoutActivity">
 
             <!-- <intent-filter> -->
@@ -167,6 +159,13 @@
         </activity>
 
         <activity android:name="cn.expand.layout.cn.ExpandLayoutActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name="cn.custom.widget.activity.CustomViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

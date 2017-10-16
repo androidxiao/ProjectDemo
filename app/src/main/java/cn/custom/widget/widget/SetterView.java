@@ -15,6 +15,8 @@ import cn.project.demo.com.R;
 
 /**
  * Created by chawei on 2017/10/9.
+ *
+ * 利用databinding 自定义setter 创建组合控件
  */
 
 public class SetterView extends ConstraintLayout {
