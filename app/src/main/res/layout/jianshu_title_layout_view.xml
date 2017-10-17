@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/id_header_view"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/id_tv_header_view"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/c_3ec88e"
+            android:gravity="center"
+            android:text="我是头部"
+          />
+</RelativeLayout>

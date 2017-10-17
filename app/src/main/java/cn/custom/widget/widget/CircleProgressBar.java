@@ -49,7 +49,7 @@ public class CircleProgressBar extends View {
     private boolean mIsStartRecord=false;
     //Arc left、top value
     private int mArcValue;
-    //record time
+    //录制 time
     private long mRecordTime;
     private Handler mHandler=new Handler(){
         @Override

@@ -22,6 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/id_circle_progress_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
         android:layout_marginTop="9dp"/>
 
     <cn.custom.widget.widget.StateView
@@ -32,5 +33,6 @@
         app:layout_constraintTop_toBottomOf="@+id/id_loading_point_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
         />
 </android.support.constraint.ConstraintLayout>

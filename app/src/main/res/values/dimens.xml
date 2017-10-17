@@ -13,4 +13,5 @@
     <dimen name="poster_thumb_height">96dp</dimen>
 
     <dimen name="poster_hero_height">192dp</dimen>
+    <dimen name="d_120">120dp</dimen>
 </resources>
