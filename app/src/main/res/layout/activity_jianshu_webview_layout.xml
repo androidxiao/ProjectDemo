@@ -5,7 +5,8 @@
               android:layout_height="match_parent">
 
     <WebView
-        android:id="@+id/id_webview"
+        android:id="@+id/id_jianshu_webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

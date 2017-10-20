@@ -14,50 +14,50 @@ ext {
             supportLibVersion: "25.3.1"
     ]
 
-    layoutDependencies=[
-            constraintLayout:"1.0.2"
+    layoutDependencies = [
+            constraintLayout: "1.0.2"
     ]
 
-    systemDependencies=[
-            multidex:"1.0.1"
+    systemDependencies = [
+            multidex: "1.0.1"
     ]
 
-    imageDependencies=[
-            glide:"3.7.0"//在测试recycleView loadmore中使用了，正式项目使用4.0.0
+    imageDependencies = [
+            glide: "3.7.0"//在测试recycleView loadmore中使用了，正式项目使用4.0.0
     ]
 
-    httpDependencies=[
-            okhttp3: "3.8.1",
+    httpDependencies = [
+            okhttp3   : "3.8.1",
             okhttp3Log: "3.4.0"
     ]
 
-    eventDependencies=[
+    eventDependencies = [
             eventbus: "3.0.0"
     ]
 
-    testDependencies=[
-            stetho:"1.5.0",
+    testDependencies = [
+            stetho     : "1.5.0",
             stethoRealm: "2.1.0"
     ]
 
-    databaseDependencies=[
+    databaseDependencies = [
 
     ]
 
-    parseDependencies=[
+    parseDependencies = [
             gson: "2.8.1"
     ]
 
-    rxDependencies=[
-            rxjava: "1.1.0",
-            rxandroid: "1.1.0",
-            retrofit: "2.1.0",
+    rxDependencies = [
+            rxjava       : "1.1.0",
+            rxandroid    : "1.1.0",
+            retrofit     : "2.1.0",
             converterGson: "2.1.0",
             adapterRxjava: "2.1.0"
     ]
 
-    permissionsDependencies=[
-            easypermissions:"1.0.0"
+    permissionsDependencies = [
+            easypermissions : "1.0.0",
     ]
 
     //依赖配置。可以添加可能使用的依赖，需要用，就直接引用就好了。

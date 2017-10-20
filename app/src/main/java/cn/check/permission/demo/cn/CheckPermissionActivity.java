@@ -22,6 +22,7 @@ import cn.project.demo.com.R;
 
 /**
  * Created by chawei on 2017/10/3.
+ * 自己写，调用系统
  */
 
 public class CheckPermissionActivity extends AppCompatActivity implements View.OnClickListener {

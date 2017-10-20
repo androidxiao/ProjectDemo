@@ -107,6 +107,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(":marshmallowpermissionhelper")
     compile librarys.supportV7
     compile librarys.supportV4
     compile librarys.constraintlayout

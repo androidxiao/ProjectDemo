@@ -50,7 +50,7 @@ public class ProjectApp extends Application {
 
         isUseStetho();
 
-//        writeIMEI();
+        writeIMEI();
     }
 
 
