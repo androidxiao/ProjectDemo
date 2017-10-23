@@ -23,9 +23,7 @@
  */
 package permission.auron.com.marshmallowpermissionhelper;
 
-/**
- * Created by luca on 3/1/16.
- */
+
 public interface PermissionResult {
 
     void permissionGranted();

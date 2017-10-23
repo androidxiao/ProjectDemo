@@ -23,10 +23,11 @@
  */
 
 apply plugin: 'com.android.library'
-
+def config = rootProject.ext.android//配置
+def librarys = rootProject.ext.dependencies//依赖
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 9
@@ -43,5 +44,5 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile librarys.supportV7
 }

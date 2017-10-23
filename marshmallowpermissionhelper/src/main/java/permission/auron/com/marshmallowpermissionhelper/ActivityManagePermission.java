@@ -41,9 +41,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-/**
- * Created by luca on 2/29/16.
- */
+
 @SuppressWarnings({"MissingPermission"})
 public class ActivityManagePermission extends AppCompatActivity {
 

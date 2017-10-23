@@ -3,6 +3,7 @@ package cn.custom.widget.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.SeekBar;
 
 import cn.custom.widget.widget.CircleRingView;
 import cn.project.demo.com.R;
@@ -13,6 +14,7 @@ import cn.project.demo.com.R;
 
 public class CustomViewActivity extends AppCompatActivity {
 
+    public static final String TAG="ez";
     private CircleRingView mCircleRingView;
 
     @Override
@@ -22,7 +24,26 @@ public class CustomViewActivity extends AppCompatActivity {
 
         findView();
 
-        mCircleRingView.setProgressValue(50);
+//        mCircleRingView.setProgressValue(50);
+
+        SeekBar seekBar= (SeekBar) findViewById(R.id.id_sb_progress);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    mCircleRingView.setProgressValue(progress);
+//                Log.d(TAG, "onProgressChanged: --->"+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     private void findView(){

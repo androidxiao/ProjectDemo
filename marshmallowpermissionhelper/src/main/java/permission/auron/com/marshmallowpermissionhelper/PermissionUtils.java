@@ -27,9 +27,6 @@ package permission.auron.com.marshmallowpermissionhelper;
 
 import android.Manifest;
 
-/**
- * Created by luca on 2/29/16.
- */
 public class PermissionUtils {
 
     public static final String Manifest_BODY_SENSORS = Manifest.permission.BODY_SENSORS;

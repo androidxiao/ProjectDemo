@@ -32,7 +32,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -42,9 +41,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-/**
- * Created by luca on 2/29/16.
- */
 @SuppressWarnings({"MissingPermission"})
 public class FragmentManagePermission extends Fragment {
 

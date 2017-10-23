@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.facebook.stetho.Stetho;
 import com.uphyca.stetho_realm.RealmInspectorModulesProvider;
@@ -50,7 +51,7 @@ public class ProjectApp extends Application {
 
         isUseStetho();
 
-        writeIMEI();
+//        writeIMEI();
     }
 
 
@@ -78,6 +79,7 @@ public class ProjectApp extends Application {
     private void writeIMEI() {
         if (TextUtils.isEmpty(SharePreUtil.getStringValue("IMEI"))) {
             TelephonyManager tm = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
+            Log.d("ez", "writeIMEI: --->"+tm.getDeviceId());
             SharePreUtil.saveString("IMEI", tm.getDeviceId());
         }
     }
