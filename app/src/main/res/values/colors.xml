@@ -13,6 +13,7 @@
     <color name="bg_gradient_start">#b21331</color>
     <color name="bg_gradient_end">#820d2a</color>
     <color name="bg_button_login">#380813</color>
+    <color name="black">#000</color>
 
 
     <color name="c_d71345">#d71345</color>
