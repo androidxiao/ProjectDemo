@@ -1,5 +1,6 @@
 # ProjectDemo
 #此项目包含的功能：
+
 1、添加了SwipeRefreshLayout的下拉刷新，并将下拉刷新封装在了BaseActivity，配合LoadingMoreFooterAdapter就可以实现上拉加载功能（Footer状态可以根据需求自定义）。
 
 2、动态权限检测
