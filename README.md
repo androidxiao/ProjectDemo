@@ -34,3 +34,5 @@
 16、添加了"权限判断封装library"
 
 17、添加ObjectAnimation实现进度条动画
+
+18、添加了rxjava+retrofit的使用方式
