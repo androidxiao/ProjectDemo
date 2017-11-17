@@ -65,8 +65,8 @@ android {
             zipAlignEnabled false
             minifyEnabled false
             buildConfigField("boolean", "LOG_DEBUG", "true")
-            buildConfigField("String", "BASE_URL", '"http://alpha.i.cow.bgg.so"')
-            buildConfigField("String", "H5_URL", '"http://alpha.i.cow.bgg.so"')
+            buildConfigField("String", "BASE_URL", '"http://alpha.i.yunshangniu.cn"')
+            buildConfigField("String", "H5_URL", '"http://alpha.i.yunshangniu.cn"')
             buildConfigField("String", "PAY_URL", '"http://alpha.shop.cow.bgg.so"')
             resValue("string", "app_name", "ProjectDemoDebug")
 //            signingConfig signingConfigs.debug

@@ -35,7 +35,7 @@ public class RetrofitDemoActivity extends AppCompatActivity implements View.OnCl
         HttpMethods methods = HttpMethods.getInstance(this);
 //        methods.getBannerData();
 
-//        methods.getSupplyList();
+        methods.getSupplyList();
 
 
     }

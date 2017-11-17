@@ -10,7 +10,7 @@ ext {
             minSdkVersion    : 15,
             targetSdkVersion : 25,
             versionCode      : 1,
-            versionName      : "1.7.4",
+            versionName      : "1.8.2",
             supportLibVersion: "25.3.1"
     ]
 

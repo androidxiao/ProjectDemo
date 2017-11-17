@@ -114,12 +114,12 @@ public class HttpMethods {
 
             @Override
             public void onError(Throwable e) {
-
+                Log.d(TAG, "onError: "+e.getMessage()+" "+e.getCause()+" "+e.getLocalizedMessage());
             }
 
             @Override
             public void onNext(SupplyModel model) {
-
+                Log.d(TAG, "onNext: "+model.getStatus()+"  --->"+model.getData().getList().size());
             }
         });
     }

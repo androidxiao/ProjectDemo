@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#30000000">
+            android:background="#90000000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,19 +29,36 @@
             android:layout_width="179dp"
             android:layout_height="179dp"
             android:layout_marginTop="15dp"
+            android:visibility="gone"
             />
 
         <cn.custom.widget.widget.ObjectAnimateCircleRingView
             android:id="@+id/id_object_animate_circle_ring_view"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:visibility="gone"/>
 
-        <cn.custom.widget.widget.StateView
-            android:id="@+id/id_state_view"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
+        <cn.custom.widget.widget.LoadingScaleAlphaView
+            android:id="@+id/id_loading_scale_alpha_view"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
             />
+
+        <!--<cn.custom.widget.widget.JiKeLikeView-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:background="#d71345"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:visibility="gone"/>-->
+
+        <cn.custom.widget.widget.QuoteView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"/>
     </LinearLayout>
 
 </ScrollView>

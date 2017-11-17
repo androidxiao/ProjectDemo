@@ -7,7 +7,6 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import cn.custom.widget.Px2DpUtil;
@@ -122,7 +121,7 @@ public class ObjectAnimateCircleRingView extends View {
     public void setMPointAngle(float value) {
         int swipeAngle = (int) (((float) value / 100) * 360);
         mSwipeAngle = swipeAngle;
-        Log.d(TAG, "setMPointAngle: --->" + value);
+//        Log.d(TAG, "setMPointAngle: --->" + value);
         postInvalidate();
     }
 
