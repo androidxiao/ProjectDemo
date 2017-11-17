@@ -28,6 +28,7 @@
 13、添加了网络请求进度圆点
 
 14、添加了"简书搜索框滑动列表时的动画效果"
+[简书搜索框动画](https://github.com/androidxiao/ProjectDemo/blob/master/assets/jianshu_search.gif)
 
 15、添加了"环形进度条"
 
