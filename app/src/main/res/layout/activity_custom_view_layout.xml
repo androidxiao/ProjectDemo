@@ -14,7 +14,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="40dp"
-            android:visibility="gone"
+            android:visibility="visible"
             />
 
         <cn.custom.widget.widget.LoadingPointView
@@ -22,14 +22,14 @@
             android:layout_width="60dp"
             android:layout_height="10dp"
             android:layout_marginTop="9dp"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
         <cn.custom.widget.widget.CircleRingView
             android:id="@+id/id_circle_ring_view"
             android:layout_width="179dp"
             android:layout_height="179dp"
             android:layout_marginTop="15dp"
-            android:visibility="gone"
+            android:visibility="visible"
             />
 
         <cn.custom.widget.widget.ObjectAnimateCircleRingView
@@ -37,7 +37,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="15dp"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
         <cn.custom.widget.widget.LoadingScaleAlphaView
             android:id="@+id/id_loading_scale_alpha_view"
@@ -45,20 +45,24 @@
             android:layout_height="60dp"
             android:layout_marginTop="9dp"
             android:layout_marginLeft="20dp"
-            android:visibility="gone"
+            android:visibility="visible"
             />
 
-        <!--<cn.custom.widget.widget.JiKeLikeView-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:background="#d71345"-->
-            <!--android:layout_width="150dp"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:visibility="gone"/>-->
+        <cn.custom.widget.widget.JiKeLikeView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:background="#d71345"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:visibility="visible"/>
 
         <cn.custom.widget.widget.QuoteView
             android:layout_width="match_parent"
-            android:layout_height="500dp"/>
+            android:layout_height="300dp"/>
+        
+        <cn.custom.widget.widget.PieProgressView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
     </LinearLayout>
 
 </ScrollView>
