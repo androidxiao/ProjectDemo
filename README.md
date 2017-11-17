@@ -3,6 +3,8 @@
 
 1、添加了SwipeRefreshLayout的下拉刷新，并将下拉刷新封装在了BaseActivity，配合LoadingMoreFooterAdapter就可以实现上拉加载功能（Footer状态可以根据需求自定义）。
 
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/loading_more.gif)
+
 2、动态权限检测
 
 3、databinding 自定义setter
@@ -27,8 +29,7 @@
 
 13、添加了网络请求进度圆点
 
-14、添加了"简书搜索框滑动列表时的动画效果"
-[简书搜索框动画](https://github.com/androidxiao/ProjectDemo/blob/master/assets/jianshu_search.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/jianshu_search.gif)
 
 15、添加了"环形进度条"
 
