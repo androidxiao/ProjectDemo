@@ -121,7 +121,6 @@ public class CircleProgressBar extends View {
                 mRectF.top = mArcValue;
                 mRectF.right = mWidth - mArcValue;
                 mRectF.bottom = mHeight - mArcValue;
-                Log.d(TAG, "onDraw: progress--->"+( (mProgressValue / mMaxValue) * 360));
                 canvas.drawArc(mRectF, -90, ((float)mProgressValue / mMaxValue) * 360, false, mRecordPaint);
 
                 if (mProgressValue == mMaxValue) {

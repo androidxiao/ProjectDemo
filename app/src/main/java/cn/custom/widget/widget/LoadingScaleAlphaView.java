@@ -45,6 +45,8 @@ public class LoadingScaleAlphaView extends View {
     private void init(Context context){
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mRadius = Px2DpUtil.dp2px(context, 10);
+        minRadius = Px2DpUtil.dp2px(context, 5);
+        maxRadius = Px2DpUtil.dp2px(context, 15);
     }
 
     @Override
@@ -84,7 +86,7 @@ public class LoadingScaleAlphaView extends View {
     }
 
     public void setMinRadius(int radius){
-        minRadius=radius;
+        minRadius=Px2DpUtil.dp2px(getContext(), radius);
     }
 
     public void setMaxRadius(int radius){
@@ -111,7 +113,9 @@ public class LoadingScaleAlphaView extends View {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Log.d(TAG, "animator3结束了。。。");
-                mAnimatorSet.start();
+                if (mAnimatorSet != null) {
+                    mAnimatorSet.start();
+                }
             }
 
             @Override
@@ -191,4 +195,13 @@ public class LoadingScaleAlphaView extends View {
         });
     }
 
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (mAnimatorSet != null) {
+            Log.d(TAG, "onDetachedFromWindow: 停止动画");
+            mAnimatorSet.cancel();
+            mAnimatorSet=null;
+        }
+    }
 }

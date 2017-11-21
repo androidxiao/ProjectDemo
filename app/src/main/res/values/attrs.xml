@@ -6,5 +6,4 @@
         <attr name="childLayout" format="integer"/>
     </declare-styleable>
 
-
 </resources>

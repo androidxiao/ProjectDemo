@@ -55,7 +55,7 @@ public class QuoteView extends View{
 
         canvas.drawColor(getContext().getResources().getColor(android.R.color.holo_purple));
 
-        canvas.translate(ScreenUtil.getScreenWidth()/2,500);
+        canvas.translate(ScreenUtil.getScreenWidth()/2,300);
 
         canvas.save();
         //外->内
@@ -85,7 +85,8 @@ public class QuoteView extends View{
         canvas.restore();
         mPaint.setTextSize(40);
         mPaint.setColor(getContext().getResources().getColor(R.color.white));
-        canvas.drawText(mValidMoney+"",-mPaint.measureText(String.valueOf(mValidMoney))/2,0,mPaint);
+        //需要使用String.format("%.2f,x);才能保留2位小数。如果用String.valueOf(mValidMoney)会被舍弃一个0，变为5000.0。
+        canvas.drawText(String.format("%.2f", mValidMoney),-mPaint.measureText(String.valueOf(mValidMoney))/2,0,mPaint);
         mPaint.setTextSize(20);
         canvas.drawText("可用额度",-mPaint.measureText("可用额度")/2,Px2DpUtil.dp2px(getContext(),20),mPaint);
     }

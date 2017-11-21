@@ -20,4 +20,8 @@
     <color name="c_a330ff">#a330ff</color>
     <color name="c_3ec88e">#24b484</color>
     <color name="c_24b484">#3ec88e</color>
+
+    <color name="c_ffa81f">#ffa81f</color>
+    <color name="c_9e9e9e">#9e9e9e</color>
+    <color name="c_ff7918">#ff7918</color>
 </resources>
