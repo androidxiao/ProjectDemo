@@ -3,6 +3,7 @@ apply from:"config.gradle"
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
         //gradle version
@@ -21,6 +22,7 @@ allprojects {
         maven {
             url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
         }
+        google()
     }
 }
 

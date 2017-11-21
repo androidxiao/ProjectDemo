@@ -101,7 +101,7 @@ public class TwitterLikeView extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
 
         mCanvas = canvas;
@@ -121,31 +121,10 @@ public class TwitterLikeView extends View {
             canvas.drawCircle(0, 0, mWhiteRadius, mPaint);
             if(mShowSelectBitmap) {
                 canvas.drawBitmap(mSelectBitmap, -mSelectBitmap.getWidth()/2, -mSelectBitmap.getHeight()/2, mPaint);
+
+
+                drawOuterCircle();
             }
-        }
-
-        if(mObjectAnimatorX!=null) {
-            mObjectAnimatorX.addListener(new Animator.AnimatorListener() {
-                @Override
-                public void onAnimationStart(Animator animation) {
-
-                }
-
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    drawOuterCircle();
-                }
-
-                @Override
-                public void onAnimationCancel(Animator animation) {
-
-                }
-
-                @Override
-                public void onAnimationRepeat(Animator animation) {
-
-                }
-            });
         }
 
 
@@ -266,6 +245,27 @@ public class TwitterLikeView extends View {
         mObjectAnimatorX.setDuration(400);
         mObjectAnimatorX.start();
 
+        mObjectAnimatorX.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+//                drawOuterCircle();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
     }
 
     private void drawOuterCircle(){

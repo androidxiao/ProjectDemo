@@ -61,8 +61,22 @@ public class PieProgressView extends View {
         pieModel = new PieModel("古典", 14.5f, ContextCompat.getColor(context, R.color.c_d71345));
         mPieModels.add(pieModel);
         pieModel = new PieModel("科幻", 34.5f, ContextCompat.getColor(context, R.color.bg_button_login));
-//        mPieModels.add(pieModel);
+        mPieModels.add(pieModel);
         pieModel = new PieModel("名著", 10.5f, ContextCompat.getColor(context, R.color.bg_gradient_end));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("武侠", 5.5f, ContextCompat.getColor(context, R.color.colorBack));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("仙侠", 15.5f, ContextCompat.getColor(context, R.color.placeholder_grey_20));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("军事", 3.5f, ContextCompat.getColor(context, R.color.c1));
+        mPieModels.add(pieModel);
+//        pieModel = new PieModel("历史", 2.5f, ContextCompat.getColor(context, R.color.blue_color));
+//        mPieModels.add(pieModel);
+//        pieModel = new PieModel("游戏", 8.5f, ContextCompat.getColor(context, R.color.c2));
+//        mPieModels.add(pieModel);
+//        pieModel = new PieModel("体育", 9.5f, ContextCompat.getColor(context, R.color.c3));
+//        mPieModels.add(pieModel);
+//        pieModel = new PieModel("二次元", 1.5f, ContextCompat.getColor(context, R.color.c4));
 //        mPieModels.add(pieModel);
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -93,14 +107,14 @@ public class PieProgressView extends View {
         rectF.right = mBigRadius * 2;
         rectF.bottom = mBigRadius * 2;
 
-        int tempAngle=-45;
+        float tempAngle=-45.0f;
 
         for (int i = 0; i < mPieModels.size(); i++) {
+
             float percent = mPieModels.get(i).getPercent() / mTotalPercent * 360;
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setColor(mPieModels.get(i).getColorId());
             canvas.drawArc(rectF, tempAngle, percent, true, mPaint);
-
             double v = (tempAngle + percent / 2) / 180 * 3.14;
             mStartX = (float) (mBigRadius * 2 * Math.cos(v));
             mStartY = (float) (mBigRadius * 2 * Math.sin(v));
@@ -111,7 +125,7 @@ public class PieProgressView extends View {
             canvas.save();
             canvas.rotate(tempAngle + percent / 2);
             mPaint.setStyle(Paint.Style.STROKE);
-            mPaint.setColor(Color.WHITE);
+//            mPaint.setColor(Color.WHITE);
             double dis = caclute2PointDis(mStartX, mStartY, mStopX, mStopY);
             canvas.drawCircle((float) (mBigRadius * 2 + dis + mOuterRadius), 0, mOuterRadius, mPaint);
             canvas.restore();

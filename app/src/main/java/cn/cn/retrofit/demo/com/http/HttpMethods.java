@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v4.util.ArrayMap;
 import android.util.Log;
 
+import java.io.IOException;
+
 import cn.cn.retrofit.demo.com.model.BannerImageModel;
 import cn.cn.retrofit.demo.com.model.SupplyModel;
 import cn.cn.retrofit.demo.com.tools.ParamsInterceptor;
@@ -69,9 +71,29 @@ public class HttpMethods {
     }
 
 
-    public void getBannerData1(Subscriber subscriber){
+    public void getBannerData1(){
         Observable<ResponseBody> observable = mApiServices.getBannerData("/v1/default/slider",paramsMd5(null));
-        toSubscribe(observable,subscriber);
+        toSubscribe(observable, new Subscriber<ResponseBody>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(ResponseBody body) {
+                try {
+                    Log.d(TAG, "onNext: ---->"+body.string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 
     /**

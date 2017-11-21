@@ -24,4 +24,10 @@
     <color name="c_ffa81f">#ffa81f</color>
     <color name="c_9e9e9e">#9e9e9e</color>
     <color name="c_ff7918">#ff7918</color>
+
+    <color name="c1">#f37fcc</color>
+    <color name="blue_color">#4192e3</color>
+    <color name="c2">#aa92e3</color>
+    <color name="c3">#aacce3</color>
+    <color name="c4">#badd11</color>
 </resources>
