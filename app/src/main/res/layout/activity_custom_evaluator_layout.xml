@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/id_start_animator"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="startAnimator"/>
+
+
+        <TextView
+            android:id="@+id/id_tv_text"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/id_cancel_animator"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="cancelAnimator"/>
+
+        <Button
+            android:id="@+id/id_start_animator1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="startAnimator"/>
+
+
+        <cn.custom.widget.widget.animation.BoundCircleView
+            android:id="@+id/id_bound_circle_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+
+        <Button
+            android:id="@+id/id_cancel_animator1"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="PhoneRock"/>
+
+
+        <ImageView
+            android:id="@+id/id_iv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/ic_phone"/>
+    </LinearLayout>
+
+</ScrollView>

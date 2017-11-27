@@ -10,7 +10,6 @@ import android.view.View;
 import cn.custom.widget.widget.CircleRingView;
 import cn.custom.widget.widget.LoadingScaleAlphaView;
 import cn.custom.widget.widget.ObjectAnimateCircleRingView;
-import cn.custom.widget.widget.TwitterLikeView;
 import cn.project.demo.com.R;
 
 /**
@@ -24,8 +23,7 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
     private ObjectAnimateCircleRingView mObjectAnimateCircleRingView;
     private LoadingScaleAlphaView mScaleAlphaView;
     private AnimatorSet mAnimatorSet;
-    private TwitterLikeView mTwitterLikeView;
-
+    private int count=100;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +39,8 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
         animator.setDuration(3000);
         animator.start();
 
+
+
 //        mScaleAlphaView.setMinRadius(5);
 //        mScaleAlphaView.setMaxRadius(20);
 //        mScaleAlphaView.startAnimate(mScaleAlphaView);
@@ -50,19 +50,16 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
         mCircleRingView = (CircleRingView) findViewById(R.id.id_circle_ring_view);
         mObjectAnimateCircleRingView = (ObjectAnimateCircleRingView) findViewById(R.id.id_object_animate_circle_ring_view);
         mScaleAlphaView = (LoadingScaleAlphaView) findViewById(R.id.id_loading_scale_alpha_view);
-        mTwitterLikeView = (TwitterLikeView) findViewById(R.id.id_twitter_like_view);
     }
 
     private void initListener(){
-        mTwitterLikeView.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.id_twitter_like_view:
-                mTwitterLikeView.starUnSelectAnimation();
-                break;
+
         }
     }
 }

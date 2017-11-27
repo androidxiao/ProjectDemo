@@ -6,4 +6,14 @@
         <attr name="childLayout" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="OldThumbUpView">
+        <attr name="o_tuv_count" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CountView">
+        <attr name="cv_count" format="integer"/>
+        <attr name="cv_text_color" format="color"/>
+        <attr name="cv_text_size" format="dimension"/>
+    </declare-styleable>
+
 </resources>

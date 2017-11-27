@@ -1,6 +1,5 @@
 package cn.custom.widget.widget;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,18 +23,12 @@ public class JiKeLikeView extends View implements View.OnClickListener {
 
     public static final String TAG = "ez";
     private Paint mPaint;
-    private Canvas mCanvas;
     private Bitmap mBitmap;
     private Bitmap mBitmapSelected;
     private Bitmap mLike;
     private float mV;
-    private static final int mIsFirst = 0x00;
-    private int mTemp = mIsFirst;
-    private static final int mAddValue = 0x01;
-    private static final int mIsBackValue = 0x02;
-    private ValueAnimator mValueAnimator;
-    private int mInitValue=123;
-    private int mUpdateValue;
+    private String[] nums;//nums[0]:不变的部分，nums[1]：原来的部分，nums[2]：更新的部分
+
     public JiKeLikeView(Context context) {
         this(context, null);
     }
@@ -55,79 +48,84 @@ public class JiKeLikeView extends View implements View.OnClickListener {
         mPaint.setTextSize(Px2DpUtil.sp2px(context, 20));
         mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_unselected);
         Matrix matrix = new Matrix();
-        matrix.postScale(1f, 0.9f);
-        mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(),
-                matrix, true);
+//        matrix.postScale(1f, 0.9f);
+//        mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(),
+//                matrix, true);
         mBitmapSelected = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_selected);
         mLike = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_selected_shining);
 
         mV = -(mPaint.descent() + mPaint.ascent());
-        mValueAnimator = new ValueAnimator();
-
+        Log.d(TAG, "mBitmap: -width-->" + mBitmap.getWidth() + " -height-->" + mBitmap.getHeight());
+        Log.d(TAG, "mBitmapSelected: -width-->" + mBitmapSelected.getWidth() + " -height-->" + mBitmapSelected.getHeight());
         setOnClickListener(this);
+
+        nums = new String[]{String.valueOf(count), "", ""};
     }
 
     @Override
     protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
-        mCanvas = canvas;
-
-        switch (mTemp) {
-            case mIsFirst:
-                drawFirstValue();
-                Log.d(TAG, "onDraw: 111");
-                break;
-            case mAddValue:
-                drawSelected();
-                mTemp=mIsBackValue;
-                Log.d(TAG, "onDraw: 222");
-                break;
-            case mIsBackValue:
-                drawFirstValue();
-                mTemp=mAddValue;
-                Log.d(TAG, "onDraw: 3333");
-                break;
-        }
-
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        drawText(canvas);
     }
 
-    private void drawFirstValue() {
-        mCanvas.drawBitmap(mBitmap, 0, 30, null);
-        drawEmptyText();
-        mCanvas.drawText(mInitValue+"", mBitmap.getWidth() + 10, mBitmap.getHeight() / 2 + mV / 2+30, mPaint);
-    }
-    private int scale;
-    public void setScale(int scale){
-        this.scale=scale;
-    }
+    private void drawText(Canvas canvas) {
 
-    public void getScale(){
+        Paint.FontMetricsInt fontMetricsInt = mPaint.getFontMetricsInt();
+        int fontMetrics = (fontMetricsInt.bottom + fontMetricsInt.top) / 2;
 
+
+        canvas.drawText(nums[0], 0, 0, mPaint);
+        canvas.drawText(nums[1], mPaint.measureText(nums[0])+5, -fontMetrics, mPaint);
+        canvas.drawText(nums[2], mPaint.measureText(nums[0])+5, fontMetrics, mPaint);
     }
 
-    private void drawSelected() {
-        Matrix matrix = new Matrix();
-        matrix.postScale(1f, 1f);
-        mBitmapSelected = Bitmap.createBitmap(mBitmapSelected, 0, 0, mBitmapSelected.getWidth(), mBitmapSelected.getHeight(),
-                matrix, true);
-        mCanvas.drawBitmap(mBitmapSelected, 0, 30, null);
-        mCanvas.drawBitmap(mLike, 0, 10, null);
-        drawEmptyText();
-        mCanvas.drawText((mInitValue+1) + "", mBitmap.getWidth() + 10, mBitmap.getHeight() / 2 + mV / 2+30, mPaint);
-    }
-
-
-
-    private void drawEmptyText(){
-        mCanvas.drawText("", mBitmap.getWidth() + 10, mBitmap.getHeight() / 2 + mV / 2+30, mPaint);
-    }
+    private boolean mIsLike = true;
 
     @Override
     public void onClick(View v) {
-         if(mTemp==mIsFirst) {
-            mTemp = mAddValue;
+        if (mIsLike) {
+            mIsLike=false;
+            calcuteNum(1);
+            count++;
+        }else{
+            mIsLike=true;
+            calcuteNum(-1);
+            count--;
         }
-        invalidate();
+    }
+
+
+
+    private int count = 99;
+
+    private void calcuteNum(int num) {//num：取值-1或者1
+        int oldLength = String.valueOf(count).length();
+        int newLength = String.valueOf(count + num).length();
+        if (oldLength != newLength) {
+            nums[0] = "";
+            nums[1] = String.valueOf(count);
+            nums[2] = String.valueOf(count + num);
+        } else {
+            String oldCount = String.valueOf(count);
+            String newCount = String.valueOf(count + num);
+            for (int i = 0; i < oldLength; i++) {
+                char oldChar = oldCount.charAt(i);
+                char newChar = newCount.charAt(i);
+                if (oldChar != newChar) {
+                    if (i == 0) {
+                        nums[0] = "";
+                    } else {
+                        nums[0] = oldCount.substring(0, i);
+                    }
+                    nums[1] = oldCount.substring(i);
+                    nums[2] = newCount.substring(i);
+                    break;
+                }
+            }
+        }
+
+        postInvalidate();
 
     }
 }
