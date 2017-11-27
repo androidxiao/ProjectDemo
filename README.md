@@ -40,3 +40,7 @@
 17、添加ObjectAnimation实现进度条动画
 
 18、添加了rxjava+retrofit的使用方式
+
+19、添加自定义Evaluation使用方式
+
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/custom_evalaution.gif)
