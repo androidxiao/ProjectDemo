@@ -44,3 +44,7 @@
 19、添加自定义Evaluation使用方式
 
 ![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/custom_evalaution.gif)
+
+20、添加左侧快速导航字母栏
+
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/letterview.gif)
