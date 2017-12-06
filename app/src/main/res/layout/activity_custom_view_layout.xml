@@ -10,12 +10,44 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="@drawable/b"-->
+            <!--android:text="联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟联盟"/>-->
+
+        <!--<cn.custom.widget.widget.GearView2-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="400dp"/>-->
+
+
+        <!--<cn.custom.widget.widget.GearView-->
+            <!--android:layout_width="390dp"-->
+            <!--android:layout_height="490dp"/>-->
+
+        <cn.custom.widget.widget.GearMachineView
+            android:id="@+id/id_gear_view"
+            android:layout_width="390dp"
+            android:layout_height="490dp"
+            android:visibility="gone"/>
+
+        <cn.custom.widget.widget.UpDownTextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:visibility="gone"/>
+
+        <cn.custom.widget.widget.OldThumbUpView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+
+
         <cn.custom.widget.widget.CircleProgressBar
             android:id="@+id/id_circle_progress_bar"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="40dp"
-            android:visibility="visible"
+            android:visibility="gone"
             />
 
         <cn.custom.widget.widget.LoadingPointView
@@ -23,14 +55,14 @@
             android:layout_width="60dp"
             android:layout_height="10dp"
             android:layout_marginTop="9dp"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
         <cn.custom.widget.widget.CircleRingView
             android:id="@+id/id_circle_ring_view"
             android:layout_width="179dp"
             android:layout_height="179dp"
             android:layout_marginTop="15dp"
-            android:visibility="visible"
+            android:visibility="gone"
             />
 
         <cn.custom.widget.widget.ObjectAnimateCircleRingView
@@ -38,7 +70,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="15dp"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
         <cn.custom.widget.widget.LoadingScaleAlphaView
             android:id="@+id/id_loading_scale_alpha_view"
@@ -46,7 +78,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="9dp"
             android:layout_marginLeft="20dp"
-            android:visibility="visible"
+            android:visibility="gone"
             />
 
         <cn.custom.widget.widget.JiKeLikeView
@@ -55,15 +87,21 @@
             android:background="#d71345"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
         <cn.custom.widget.widget.QuoteView
             android:layout_width="match_parent"
-            android:layout_height="270dp"/>
+            android:layout_height="270dp"
+            android:visibility="gone"/>
         
         <cn.custom.widget.widget.PieProgressView
             android:layout_width="match_parent"
-            android:layout_height="450dp"/>
+            android:layout_height="wrap_content"
+            />
+
+        <cn.custom.widget.widget.LadderView
+            android:layout_width="match_parent"
+            android:layout_height="800dp"/>
 
 
     </LinearLayout>

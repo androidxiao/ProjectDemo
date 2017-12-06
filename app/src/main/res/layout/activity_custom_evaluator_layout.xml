@@ -36,7 +36,7 @@
             android:text="startAnimator"/>
 
 
-        <cn.custom.widget.widget.animation.BoundCircleView
+        <cn.custom.widget.widget.propertyanimation.BoundCircleView
             android:id="@+id/id_bound_circle_view"
             android:layout_width="300dp"
             android:layout_height="300dp"/>

@@ -167,6 +167,13 @@
         </activity>
 
         <activity android:name="cn.custom.widget.activity.CustomViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="cn.custom.widget.activity.LetterViewActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN"/>-->
                 <!--<category android:name="android.intent.category.LAUNCHER"/>-->
@@ -174,10 +181,10 @@
         </activity>
 
         <activity android:name="cn.custom.widget.activity.CustomEvaluatorActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name="cn.custom.widget.activity.JianshuActivity">

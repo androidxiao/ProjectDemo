@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import cn.custom.widget.widget.animation.BoundCircleView;
-import cn.custom.widget.widget.animation.CharEvaluator;
+import cn.custom.widget.widget.propertyanimation.BoundCircleView;
+import cn.custom.widget.widget.propertyanimation.CharEvaluator;
 import cn.project.demo.com.R;
 
 /**

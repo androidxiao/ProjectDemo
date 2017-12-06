@@ -30,4 +30,22 @@
     <color name="c2">#aa92e3</color>
     <color name="c3">#aacce3</color>
     <color name="c4">#badd11</color>
+
+    <color name="c_F9A54A">#F9A54A</color>
+    <color name="c_898B8D">#898B8D</color>
+    <color name="c_F35E66">#F35E66</color>
+    <color name="c_48A5D9">#48A5D9</color>
+    <color name="c_48C67A">#48C67A</color>
+    <color name="c_817699">#817699</color>
+    <color name="c_A78B7A">#A78B7A</color>
+    <color name="c_D36E8F">#D36E8F</color>
+    <color name="c_8B8197">#8B8197</color>
+
+    <!-- Gear -->
+    <color name="red">#DC152B</color>
+    <color name="red_dark">#A91E2C</color>
+    <color name="red_transition">#C71325</color>
+    <color name="red_transition_dark">#AAB11020</color>
+    <color name="shadow_black">#24000000</color>
+
 </resources>
