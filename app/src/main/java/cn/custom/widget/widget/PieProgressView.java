@@ -1,5 +1,6 @@
 package cn.custom.widget.widget;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -12,6 +13,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -106,6 +108,9 @@ public class PieProgressView extends View  {
 
 //        setStartAngle(-45f);
         setStartAngle(0f);
+
+
+        initAnimation();
     }
 
     public void changeData() {
@@ -132,6 +137,7 @@ public class PieProgressView extends View  {
         }
 
         pieAngles = new float[mPieModels.size()];
+        initAnimation();
         invalidate();
     }
 
@@ -188,6 +194,22 @@ public class PieProgressView extends View  {
         return defaultHeight;
     }
 
+    private void initAnimation(){
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 360);
+        valueAnimator.setDuration(3000);
+        valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                mAnimateValue= (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+
+        valueAnimator.start();
+    }
+
+    private float mAnimateValue;
 
     /**
      * 圆点坐标：(x0,y0)
@@ -215,15 +237,16 @@ public class PieProgressView extends View  {
         rectF.top = -mBigRadius * 2;
         rectF.right = mBigRadius * 2;
         rectF.bottom = mBigRadius * 2;
-
+        float tempAngle =mStartAngle;
 //        float tempAngle = -45.0f;
-        float tempAngle = mStartAngle;
+//        float tempAngle = mStartAngle;
         float rotateAngle = Math.abs(mStartAngle);
         for (int i = 0; i < mPieModels.size(); i++) {
 
             float percent = mPieModels.get(i).getPercent() / mTotalPercent * 360;
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setColor(mPieModels.get(i).getColorId());
+            percent = Math.min(percent, mAnimateValue);
             canvas.drawArc(rectF, tempAngle, percent, true, mPaint);
             double v = (tempAngle + percent / 2) / 180 * 3.14;
             mStartX = (float) (mBigRadius * 2 * Math.cos(v));
