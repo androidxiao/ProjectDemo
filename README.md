@@ -48,3 +48,7 @@
 20、添加左侧快速导航字母栏
 
 ![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/letterview.gif)
+
+21、自定义饼状图并添加了点击事件
+
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/piechart.gif)
