@@ -11,6 +11,7 @@ import cn.custom.widget.widget.CircleRingView;
 import cn.custom.widget.widget.GearMachineView;
 import cn.custom.widget.widget.LoadingScaleAlphaView;
 import cn.custom.widget.widget.ObjectAnimateCircleRingView;
+import cn.custom.widget.widget.PieProgressView;
 import cn.project.demo.com.R;
 
 /**
@@ -48,6 +49,14 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
 //        mScaleAlphaView.setMinRadius(5);
 //        mScaleAlphaView.setMaxRadius(20);
 //        mScaleAlphaView.startAnimate(mScaleAlphaView);
+
+
+        findViewById(R.id.id_btn_change_data).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((PieProgressView)findViewById(R.id.id_pie)).changeData();
+            }
+        });
     }
 
     private void findView() {

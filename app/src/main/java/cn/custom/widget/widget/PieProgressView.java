@@ -12,8 +12,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import cn.cn.retrofit.demo.com.utils.ScreenUtil;
 import cn.custom.widget.Px2DpUtil;
@@ -24,7 +26,7 @@ import cn.project.demo.com.R;
  * Created by chawei on 2017/11/17.
  */
 
-public class PieProgressView extends View {
+public class PieProgressView extends View  {
 
     public static final String TAG = "ez";
     private ArrayList<PieModel> mPieModels;
@@ -38,7 +40,13 @@ public class PieProgressView extends View {
     private float mStartY;
     private float mStopX;
     private float mStopY;
-
+    private int mWidth;
+    private int mHeight;
+    private float[] pieAngles;
+    private int angleId = -1;
+    private int mValidHeight;
+    private int mValidWidth;
+    private  Context context;
     public PieProgressView(Context context) {
         this(context, null);
     }
@@ -53,7 +61,7 @@ public class PieProgressView extends View {
     }
 
     private void init(Context context) {
-
+        this.context=context;
         mPieModels = new ArrayList<>();
 
         PieModel pieModel = new PieModel("玄幻", 44f, ContextCompat.getColor(context, R.color.c_3ec88e));
@@ -64,14 +72,14 @@ public class PieProgressView extends View {
         mPieModels.add(pieModel);
         pieModel = new PieModel("科幻", 34f, ContextCompat.getColor(context, R.color.bg_button_login));
         mPieModels.add(pieModel);
-        pieModel = new PieModel("名著", 10f, ContextCompat.getColor(context, R.color.bg_gradient_end));
-        mPieModels.add(pieModel);
-        pieModel = new PieModel("武侠", 5f, ContextCompat.getColor(context, R.color.colorBack));
-        mPieModels.add(pieModel);
-        pieModel = new PieModel("仙侠", 15f, ContextCompat.getColor(context, R.color.placeholder_grey_20));
-        mPieModels.add(pieModel);
-        pieModel = new PieModel("军事", 3f, ContextCompat.getColor(context, R.color.c1));
-        mPieModels.add(pieModel);
+//        pieModel = new PieModel("名著", 10f, ContextCompat.getColor(context, R.color.bg_gradient_end));
+//        mPieModels.add(pieModel);
+//        pieModel = new PieModel("武侠", 5f, ContextCompat.getColor(context, R.color.colorBack));
+//        mPieModels.add(pieModel);
+//        pieModel = new PieModel("仙侠", 15f, ContextCompat.getColor(context, R.color.placeholder_grey_20));
+//        mPieModels.add(pieModel);
+//        pieModel = new PieModel("军事", 3f, ContextCompat.getColor(context, R.color.c1));
+//        mPieModels.add(pieModel);
 //        pieModel = new PieModel("历史", 2.5f, ContextCompat.getColor(context, R.color.blue_color));
 //        mPieModels.add(pieModel);
 //        pieModel = new PieModel("游戏", 8.5f, ContextCompat.getColor(context, R.color.c2));
@@ -80,6 +88,8 @@ public class PieProgressView extends View {
 //        mPieModels.add(pieModel);
 //        pieModel = new PieModel("二次元", 1.5f, ContextCompat.getColor(context, R.color.c4));
 //        mPieModels.add(pieModel);
+
+        pieAngles = new float[mPieModels.size()];
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStrokeWidth(Px2DpUtil.dp2px(context, 2));
@@ -94,6 +104,35 @@ public class PieProgressView extends View {
             mTotalPercent += mPieModels.get(i).getPercent();
         }
 
+//        setStartAngle(-45f);
+        setStartAngle(0f);
+    }
+
+    public void changeData() {
+        mPieModels.clear();
+        PieModel pieModel = new PieModel("名著", 10f, ContextCompat.getColor(context, R.color.bg_gradient_end));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("武侠", 5f, ContextCompat.getColor(context, R.color.colorBack));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("仙侠", 15f, ContextCompat.getColor(context, R.color.placeholder_grey_20));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("军事", 3f, ContextCompat.getColor(context, R.color.c1));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("历史", 2.5f, ContextCompat.getColor(context, R.color.blue_color));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("游戏", 8.5f, ContextCompat.getColor(context, R.color.c2));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("体育", 9.5f, ContextCompat.getColor(context, R.color.c3));
+        mPieModels.add(pieModel);
+        pieModel = new PieModel("二次元", 1.5f, ContextCompat.getColor(context, R.color.c4));
+        mPieModels.add(pieModel);
+        mTotalPercent=0;
+        for (int i = 0; i < mPieModels.size(); i++) {
+            mTotalPercent += mPieModels.get(i).getPercent();
+        }
+
+        pieAngles = new float[mPieModels.size()];
+        invalidate();
     }
 
     @Override
@@ -102,12 +141,12 @@ public class PieProgressView extends View {
 
         int minimumWidth = getSuggestedMinimumWidth();
         int minimumHeight = getSuggestedMinimumHeight();
-        int validWidth = measureWidth(minimumWidth, widthMeasureSpec);
-        int validHeight = measureHeight(minimumHeight, heightMeasureSpec);
-        setMeasuredDimension(validWidth,validHeight);
+        mValidWidth = measureWidth(minimumWidth, widthMeasureSpec);
+        mValidHeight = measureHeight(minimumHeight, heightMeasureSpec);
+        setMeasuredDimension(mValidWidth, mValidHeight);
     }
 
-    private int measureWidth(int defaultWidth,int measureSpec){
+    private int measureWidth(int defaultWidth, int measureSpec) {
         int widthMode = MeasureSpec.getMode(measureSpec);
         int widthSize = MeasureSpec.getSize(measureSpec);
         switch (widthMode) {
@@ -115,7 +154,7 @@ public class PieProgressView extends View {
 //                Log.d(TAG, "measureWidth: --AT_MOST----->"+defaultWidth);
                 break;
             case MeasureSpec.EXACTLY://match_parent,具体值
-                defaultWidth=widthSize;
+                defaultWidth = widthSize;
 //                Log.d(TAG, "measureWidth: --1111-->"+defaultWidth);
                 break;
             case MeasureSpec.UNSPECIFIED://无限大，子view想多大就多大
@@ -124,7 +163,7 @@ public class PieProgressView extends View {
         return defaultWidth;
     }
 
-    private int measureHeight(int defaultHeight,int measureSpec){
+    private int measureHeight(int defaultHeight, int measureSpec) {
         int heightMode = MeasureSpec.getMode(measureSpec);
         int heightSize = MeasureSpec.getSize(measureSpec);
         switch (heightMode) {
@@ -136,13 +175,13 @@ public class PieProgressView extends View {
 //                Log.d(TAG, "measureHeight: --AT_MOST-->"+defaultHeight);
                 break;
             case MeasureSpec.EXACTLY://match_parent,具体值
-                defaultHeight=heightSize;
+                defaultHeight = heightSize;
 //                Log.d(TAG, "measureHeight: --EXACTLY-->"+defaultHeight);
                 break;
             case MeasureSpec.UNSPECIFIED://无限大，子view想多大就多大
 //                defaultHeight= Math.max(defaultHeight, heightSize);
                 double calLineLength1 = caclute2PointDis(0, mOuterRadius, 0, mOuterRadius + 50);
-                defaultHeight =(mBigRadius * 3 + mOuterRadius * 2 + Px2DpUtil.dp2px(getContext(), (float) calLineLength1) * 6);
+                defaultHeight = (mBigRadius * 3 + mOuterRadius * 2 + Px2DpUtil.dp2px(getContext(), (float) calLineLength1) * 6);
 //                Log.d(TAG, "measureHeight: --UNSPECIFIED-->"+defaultHeight);
                 break;
         }
@@ -166,16 +205,20 @@ public class PieProgressView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.translate(ScreenUtil.getScreenWidth() / 2, 500);
-        canvas.drawColor(Color.YELLOW);
+        if (mPieModels != null && mPieModels.size() == 0) {
+            return;
+        }
+
+        canvas.translate(ScreenUtil.getScreenWidth() / 2, mValidHeight / 2);
         RectF rectF = new RectF();
         rectF.left = -mBigRadius * 2;
         rectF.top = -mBigRadius * 2;
         rectF.right = mBigRadius * 2;
         rectF.bottom = mBigRadius * 2;
 
-        float tempAngle = -45.0f;
-        float rotateAngle=45;
+//        float tempAngle = -45.0f;
+        float tempAngle = mStartAngle;
+        float rotateAngle = Math.abs(mStartAngle);
         for (int i = 0; i < mPieModels.size(); i++) {
 
             float percent = mPieModels.get(i).getPercent() / mTotalPercent * 360;
@@ -206,18 +249,25 @@ public class PieProgressView extends View {
             canvas.drawText(mPieModels.get(i).getText(), -mPaint.measureText(mPieModels.get(i).getText()) / 2, 0, mPaint);
             mPaint.setTextSize(30);
             mPaint.setColor(mPieModels.get(i).getColorId());
-            if(rotateAngle>=120&&rotateAngle<=270) {
-                canvas.drawLine(0, mOuterRadius,  0, (mOuterRadius+50),mPaint);
-                canvas.drawText((int)mPieModels.get(i).getPercent() + "%", -mPaint.measureText((int)mPieModels.get(i).getPercent() + "%") / 2, (mOuterRadius + 80), mPaint);
-            }else{
-                canvas.drawLine(0, -mOuterRadius,  0, -(mOuterRadius+50),mPaint);
-                canvas.drawText((int)mPieModels.get(i).getPercent() + "%", -mPaint.measureText((int)mPieModels.get(i).getPercent() + "%") / 2, -(mOuterRadius + 60), mPaint);
+            if (rotateAngle >= 0 && rotateAngle <= 180) {//这里是因为其实角度是0，如果是其它值是需要重新考虑取值范围的
+                canvas.drawLine(0, mOuterRadius, 0, (mOuterRadius + 50), mPaint);
+                canvas.drawText((int) mPieModels.get(i).getPercent() + "%", -mPaint.measureText((int) mPieModels.get(i).getPercent() + "%") / 2, (mOuterRadius + 80), mPaint);
+            } else {
+                canvas.drawLine(0, -mOuterRadius, 0, -(mOuterRadius + 50), mPaint);
+                canvas.drawText((int) mPieModels.get(i).getPercent() + "%", -mPaint.measureText((int) mPieModels.get(i).getPercent() + "%") / 2, -(mOuterRadius + 60), mPaint);
             }
             canvas.restore();
 
 
+
             tempAngle += percent;
-            rotateAngle+=Math.abs(percent);//计算到哪个临界值时，百分比该显示在下方
+            rotateAngle += Math.abs(percent);//计算到哪个临界值时，百分比该显示在下方
+            pieAngles[i] =tempAngle;
+
+
+            if (i == angleId) {
+                Log.d(TAG, "onDraw: -相等了啊--->" + i);
+            }
         }
 
         mPaint.setStyle(Paint.Style.FILL);
@@ -226,17 +276,68 @@ public class PieProgressView extends View {
         mPaint.setColor(Color.parseColor("#10000000"));
         canvas.drawCircle(0, 0, mSmallRadius, mPaint);
 
+
     }
 
+    float mStartAngle = 0f;
+
+
+    /**
+     * 设置起始角度
+     * @param mStartAngle 起始角度
+     */
+    public void setStartAngle(float mStartAngle) {
+        while (mStartAngle<0){
+            mStartAngle = mStartAngle+360;
+        }
+        while (mStartAngle>360){
+            mStartAngle = mStartAngle-360;
+        }
+        this.mStartAngle = mStartAngle;
+    }
+
+    /**
+     * 在用户点击下的时候，获取当前的坐标，计算出这个点与原点的距离以及角度。
+     * 通过距离可以判断出是否点击在了扇形区域上，而通过角度可以判断出点击了哪一个区域。
+     *
+     * @param event
+     * @return
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        int action = event.getAction();
-        switch (action) {
-            case MotionEvent.ACTION_DOWN:
-                float x = event.getX();
-                float y = event.getY();
-                Log.d(TAG, "onTouchEvent: --->"+x+"---->"+y);
-                break;
+        if (mPieModels.size() > 0) {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    float x = event.getX() - ScreenUtil.getScreenWidth() / 2;
+                    float y = event.getY() - (mValidHeight / 2);
+                    float touchAngle = 0;
+                    if (x < 0 && y < 0) {
+                        touchAngle += 180;
+                    } else if (y < 0 && x > 0) {
+                        touchAngle += 360;
+                    } else if (y > 0 && x < 0) {
+                        touchAngle += 180;
+                    }
+                    touchAngle += Math.toDegrees(Math.atan(y / x));
+                    touchAngle = touchAngle -mStartAngle;
+                    if (touchAngle < 0) {
+                        touchAngle = touchAngle + 360;
+                    }
+                    float touchRadius = (float) caclute2PointDis(0, 0, x, y);
+                    if (touchRadius <= mBigRadius * 2 && touchRadius >= mSmallRadius) {
+                        angleId = -Arrays.binarySearch(pieAngles, (touchAngle))-1;
+                        Log.d(TAG, "onTouchEvent: ----->" + angleId);
+                        if(angleId<mPieModels.size()) {
+                            Toast.makeText(getContext(), mPieModels.get(angleId).getText(), Toast.LENGTH_SHORT).show();
+                        }
+//                        invalidate();
+                    }
+                    return true;
+                case MotionEvent.ACTION_UP:
+                    angleId = -1;
+                    invalidate();
+                    return true;
+            }
         }
         return super.onTouchEvent(event);
     }

@@ -93,8 +93,15 @@
             android:layout_width="match_parent"
             android:layout_height="270dp"
             android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/id_btn_change_data"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="添加数据"/>
         
         <cn.custom.widget.widget.PieProgressView
+            android:id="@+id/id_pie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
