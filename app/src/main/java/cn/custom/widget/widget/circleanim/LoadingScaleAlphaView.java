@@ -1,4 +1,4 @@
-package cn.custom.widget.widget;
+package cn.custom.widget.widget.circleanim;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

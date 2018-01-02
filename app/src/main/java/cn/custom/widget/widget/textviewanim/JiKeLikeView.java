@@ -1,4 +1,4 @@
-package cn.custom.widget.widget;
+package cn.custom.widget.widget.textviewanim;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,7 +9,6 @@ import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import cn.custom.widget.Px2DpUtil;
@@ -55,8 +54,6 @@ public class JiKeLikeView extends View implements View.OnClickListener {
         mLike = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_selected_shining);
 
         mV = -(mPaint.descent() + mPaint.ascent());
-        Log.d(TAG, "mBitmap: -width-->" + mBitmap.getWidth() + " -height-->" + mBitmap.getHeight());
-        Log.d(TAG, "mBitmapSelected: -width-->" + mBitmapSelected.getWidth() + " -height-->" + mBitmapSelected.getHeight());
         setOnClickListener(this);
 
         nums = new String[]{String.valueOf(count), "", ""};

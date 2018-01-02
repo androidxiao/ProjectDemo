@@ -21,7 +21,7 @@
 
 
 
-    <cn.custom.widget.widget.LetterView
+    <cn.custom.widget.widget.textviewanim.LetterView
         android:id="@+id/id_letter_view"
         android:layout_width="40dp"
         android:layout_height="match_parent"

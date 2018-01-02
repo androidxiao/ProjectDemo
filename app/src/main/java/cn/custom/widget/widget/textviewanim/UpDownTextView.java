@@ -1,4 +1,4 @@
-package cn.custom.widget.widget;
+package cn.custom.widget.widget.textviewanim;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;

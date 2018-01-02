@@ -247,12 +247,14 @@ public class PieProgressView extends View  {
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setColor(mPieModels.get(i).getColorId());
             percent = Math.min(percent, mAnimateValue);
+            //画扇形
             canvas.drawArc(rectF, tempAngle, percent, true, mPaint);
             double v = (tempAngle + percent / 2) / 180 * 3.14;
             mStartX = (float) (mBigRadius * 2 * Math.cos(v));
             mStartY = (float) (mBigRadius * 2 * Math.sin(v));
             mStopX = (float) ((mBigRadius * 2 + 50) * Math.cos(v));
             mStopY = (float) ((mBigRadius * 2 + 50) * Math.sin(v));
+            //扇形上的线段
             canvas.drawLine(mStartX, mStartY, mStopX, mStopY, mPaint);
 
             canvas.save();
@@ -260,15 +262,18 @@ public class PieProgressView extends View  {
             mPaint.setStyle(Paint.Style.STROKE);
             mPaint.setColor(Color.WHITE);
             double dis = caclute2PointDis(mStartX, mStartY, mStopX, mStopY);
+            //线段上的外圆
             canvas.drawCircle((float) (mBigRadius * 2 + dis + mOuterRadius), 0, mOuterRadius, mPaint);
             canvas.restore();
 
             canvas.save();
             mStopX = (float) ((mBigRadius * 2 + 50 + mOuterRadius) * Math.cos(v));
             mStopY = (float) ((mBigRadius * 2 + 50 + mOuterRadius) * Math.sin(v));
+            //旋转坐标到线段的尾部，这样为了更好画外圆中的文字
             canvas.translate(mStopX, mStopY);
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setTextSize(20);
+            //外圆中的文字
             canvas.drawText(mPieModels.get(i).getText(), -mPaint.measureText(mPieModels.get(i).getText()) / 2, 0, mPaint);
             mPaint.setTextSize(30);
             mPaint.setColor(mPieModels.get(i).getColorId());
@@ -295,8 +300,10 @@ public class PieProgressView extends View  {
 
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(Color.WHITE);
+        //中心白色小圆
         canvas.drawCircle(0, 0, mMidRadius, mPaint);
         mPaint.setColor(Color.parseColor("#10000000"));
+        //中心透明圆
         canvas.drawCircle(0, 0, mSmallRadius, mPaint);
 
 
@@ -347,7 +354,9 @@ public class PieProgressView extends View  {
                         touchAngle = touchAngle + 360;
                     }
                     float touchRadius = (float) caclute2PointDis(0, 0, x, y);
+                    //判断点击的位置是否在扇形上
                     if (touchRadius <= mBigRadius * 2 && touchRadius >= mSmallRadius) {
+                        //计算点击的是哪部分扇形
                         angleId = -Arrays.binarySearch(pieAngles, (touchAngle))-1;
                         Log.d(TAG, "onTouchEvent: ----->" + angleId);
                         if(angleId<mPieModels.size()) {

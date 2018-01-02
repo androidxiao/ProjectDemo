@@ -1,4 +1,4 @@
-package cn.custom.widget.widget;
+package cn.custom.widget.widget.textviewanim;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -28,6 +28,9 @@ import cn.project.demo.com.R;
  */
 
 public class OldThumbUpView extends View implements View.OnClickListener {
+
+    public static final String TAG = "ez";
+
     private static final float SCALE_MIN = 0.9f;
     private static final float SCALE_MAX = 1f;
 
@@ -153,9 +156,11 @@ public class OldThumbUpView extends View implements View.OnClickListener {
         drawablePadding = dp_2 * 2;
         textStartX = dip2px(THUMB_WIDTH) + drawablePadding;
         textSize = TEXT_DEFAULT_SIZE;
+        count=98;
         nums = new String[]{String.valueOf(count), "", ""};
         OFFSET_MIN = 0;
-        OFFSET_MAX = 1.5f * sp2px(textSize);
+//        OFFSET_MAX = 1.5f * sp2px(textSize);
+        OFFSET_MAX = sp2px(textSize);
 
     }
 
@@ -221,8 +226,10 @@ public class OldThumbUpView extends View implements View.OnClickListener {
         this.mOldOffsetY = offsetY;//变大是从[0,1]，变小是[0,-1]
         if (toBigger) {//从下到上[-1,0]
             this.mNewOffsetY = offsetY - OFFSET_MAX;
+            Log.d(TAG, "值增加: ----->" + mNewOffsetY);
         } else {//从上到下[1,0]
             this.mNewOffsetY = OFFSET_MAX + offsetY;
+            Log.d(TAG, "值减少: ----->" + mNewOffsetY);
         }
         postInvalidate();
     }
@@ -230,20 +237,20 @@ public class OldThumbUpView extends View implements View.OnClickListener {
     public float getTextOffsetY() {
         return OFFSET_MIN;
     }
-//    //======自定义属性动画部分======
-//
-//    public OldThumbUpView setCount(int count) {
-//        this.count = count;
-//        calculateChangeNum(0);
-//        requestLayout();
-//        return this;
-//    }
-//
-//    public OldThumbUpView setThumbUp(boolean isThumbUp) {
-//        this.isThumbUp = isThumbUp;
-//        postInvalidate();
-//        return this;
-//    }
+    //======自定义属性动画部分======
+
+    public OldThumbUpView setCount(int count) {
+        this.count = count;
+        calculateChangeNum(0);
+        requestLayout();
+        return this;
+    }
+
+    public OldThumbUpView setThumbUp(boolean isThumbUp) {
+        this.isThumbUp = isThumbUp;
+        postInvalidate();
+        return this;
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -312,6 +319,8 @@ public class OldThumbUpView extends View implements View.OnClickListener {
 
         mClipPath = new Path();
         mClipPath.addCircle(startX + mCircleX, startY + mCircleY, RADIUS_MAX, Path.Direction.CW);
+
+        Log.d(TAG, "onSizeChanged: ---》");
     }
 
     @Override
@@ -338,6 +347,7 @@ public class OldThumbUpView extends View implements View.OnClickListener {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         drawIcon(canvas);
         drawText(canvas);
     }
@@ -363,11 +373,14 @@ public class OldThumbUpView extends View implements View.OnClickListener {
 
     private void drawText(Canvas canvas) {
         Paint.FontMetricsInt fontMetrics = mTextPaint.getFontMetricsInt();
+//        float y = (dip2px(THUMB_HEIGHT + SHINING_HEIGHT) - fontMetrics.bottom - fontMetrics.top) / 2;
         float y = (dip2px(THUMB_HEIGHT + SHINING_HEIGHT) - fontMetrics.bottom - fontMetrics.top) / 2;
 
         mTextPaint.setColor(TEXT_DEFAULT_COLOR);
         canvas.drawText(String.valueOf(nums[0]), startX + textStartX, startY + y, mTextPaint);
-
+        Log.d(TAG, "drawText: startX---->"+startX);
+        Log.d(TAG, "drawText: textStartX---->"+textStartX);
+        Log.d(TAG, "drawText: startY---->"+startY);
         String text = String.valueOf(count);
         float textWidth = mTextPaint.measureText(text) / text.length();
         float fraction = (OFFSET_MAX - Math.abs(mOldOffsetY)) / (OFFSET_MAX - OFFSET_MIN);
@@ -377,6 +390,9 @@ public class OldThumbUpView extends View implements View.OnClickListener {
 
         mTextPaint.setColor((Integer) evaluate(fraction, TEXT_DEFAULT_COLOR, TEXT_DEFAULT_END_COLOR));
         canvas.drawText(String.valueOf(nums[2]), startX + textStartX + textWidth * nums[0].length(), startY + y - mNewOffsetY, mTextPaint);
+
+
+
     }
 
     /**

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B200">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/id_btn_start"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="模拟开始搜索"/>
+
+            <Button
+                android:id="@+id/id_btn_end"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="模拟停止搜索"/>
+        </LinearLayout>
+
+
+        <cn.custom.widget.widget.pathmeasure.SearchView2
+            android:id="@+id/id_search_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+
+
+        <!--<cn.custom.widget.widget.pathmeasure.PathMeasureView1-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"/>-->
+
+
+        <!--<cn.custom.widget.widget.pathmeasure.PathMeasureView2-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"/>-->
+
+
+        <!--<cn.custom.widget.widget.pathmeasure.PathMeasureView3-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"/>-->
+
+        <!--<cn.custom.widget.widget.pathmeasure.PathMeasureView4-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"/>-->
+        <!---->
+        <!--<cn.custom.widget.widget.pathmeasure.SearchView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"/>-->
+
+    </LinearLayout>
+
+</ScrollView>

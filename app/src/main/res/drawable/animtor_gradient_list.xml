@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/shape_start_gradient"
+        android:duration="500" />
+
+    <item
+        android:drawable="@drawable/shape_center_gradient"
+        android:duration="500" />
+
+    <item
+        android:drawable="@drawable/shape_end_gradient"
+        android:duration="500" />
+</animation-list>

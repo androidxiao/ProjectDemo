@@ -127,4 +127,5 @@ dependencies {
     compile librarys.okhttp3Log
     compile librarys.glide
     compile librarys.easyPermissions
+    compile librarys.compressImage
 }

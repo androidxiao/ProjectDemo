@@ -48,4 +48,31 @@
     <color name="red_transition_dark">#AAB11020</color>
     <color name="shadow_black">#24000000</color>
 
+
+    <!--蜘蛛侠-->
+    <color name="c_spider_man">#2F5DA9</color>
+    <color name="c_spider_man_bg">#C6DCFE</color>
+
+    <!--钢铁侠-->
+    <color name="c_lron_man">#FD4221</color>
+    <color name="c_lron_man_bg">#F7DEDE</color>
+
+
+    <!--美国队长-->
+    <color name="c_captain_america">#C7E7FB</color>
+    <color name="c_captain_america_bg">#F0F8FD</color>
+
+    <!--蝙蝠侠-->
+    <color name="c_bat_man">#FFD200</color>
+    <color name="c_bat_man_bg">#C1C1C1</color>
+
+    <!--银行卡-->
+    <color name="c_243037">#243037</color>
+    <color name="c_C5C9CB">#51595C</color>
+    <color name="c_545C62">#545C62</color>
+    <color name="c_61696D">#61696D</color>
+    <color name="c_7B8388">#7B8388</color>
+    <color name="c_2879D7">#2879D7</color>
+    <color name="c_499AF7">#499AF7</color>
+    <color name="c_4996F3">#4996F3</color>
 </resources>

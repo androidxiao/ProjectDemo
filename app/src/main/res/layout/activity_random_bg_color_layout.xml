@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/id_ll"
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/tv_one_side_border_layer_list"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="TextView设置只有左边有边框"/>
+
+    <Button
+        android:id="@+id/id_btn_change_color"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="点击切换颜色"/>
+
+</LinearLayout>

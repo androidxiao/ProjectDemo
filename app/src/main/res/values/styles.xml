@@ -12,4 +12,26 @@
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
     </style>
+
+    <style name="PopAnimRigthBot" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_scale_right_bot_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_scale_right_bot_dismiss</item>
+    </style>
+
+    <style name="PopAnimRigthTop" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_scale_right_top_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_scale_right_top_dismiss</item>
+    </style>
+
+    <style name="PopAnimLeftTop" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_scale_left_top_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_scale_left_top_dismiss</item>
+    </style>
+
+    <style name="PopAnimLeftBot" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_scale_left_bot_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_scale_left_bot_dismiss</item>
+    </style>
+
+
 </resources>

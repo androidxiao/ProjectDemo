@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_ctlt_bank_reverse"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/animtor_gradient_list"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bank_round_rect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/id_tv_bank_num_reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:hint="XXXX XXXX XXXX XXXX XXXX反面"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="19"
+            android:textColor="@color/white"
+            android:textColorHint="@color/c_C5C9CB"
+            android:textCursorDrawable="@android:color/transparent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/id_tv_bank_date_reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:hint="MM/YY"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/c_C5C9CB"
+            android:textCursorDrawable="@android:color/transparent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_tv_bank_num_reverse"/>
+
+        <EditText
+            android:id="@+id/id_tv_valid_date_reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="CW CODE"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/c_C5C9CB"
+            android:textCursorDrawable="@android:color/transparent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/id_tv_bank_date_reverse"
+            app:layout_constraintRight_toLeftOf="@+id/id_tv_sign_reverse"
+            />
+
+        <TextView
+            android:id="@+id/id_tv_sign_reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/shape_tv_round_bg"
+            android:gravity="center"
+            android:text="?"
+            android:textColor="@color/c_61696D"
+            app:layout_constraintBaseline_toBaselineOf="@+id/id_tv_bank_date_reverse"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+
+        <EditText
+            android:id="@+id/id_tv_card_holder_reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@null"
+            android:hint="CARD HOLDER"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/c_C5C9CB"
+            android:textCursorDrawable="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_tv_bank_date_reverse"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

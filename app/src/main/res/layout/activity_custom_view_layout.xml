@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             xmlns:thumbup="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -9,6 +11,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <cn.custom.widget.widget.textviewanim.GradientTextView2
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <cn.custom.widget.widget.textviewanim.FlashTextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <cn.custom.widget.widget.textviewanim.UploadLoadingView
+            android:id="@+id/id_upload_loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+
+        <FrameLayout
+            android:id="@+id/id_fl"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:visibility="gone">
+
+            <cn.custom.widget.widget.reveal.RevealCircleView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+
+        </FrameLayout>
+
+
+        <cn.custom.widget.widget.reveal.RevealFilmView
+            android:id="@+id/id_reveal_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
 
         <!--<TextView-->
             <!--android:layout_width="match_parent"-->
@@ -31,18 +68,18 @@
             android:layout_height="490dp"
             android:visibility="gone"/>
 
-        <cn.custom.widget.widget.UpDownTextView
+        <cn.custom.widget.widget.textviewanim.UpDownTextView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:visibility="gone"/>
 
-        <cn.custom.widget.widget.OldThumbUpView
+        <cn.custom.widget.widget.textviewanim.OldThumbUpView
             android:layout_width="50dp"
             android:layout_height="50dp"
             />
 
 
-        <cn.custom.widget.widget.CircleProgressBar
+        <cn.custom.widget.widget.circleanim.CircleProgressBar
             android:id="@+id/id_circle_progress_bar"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -50,14 +87,14 @@
             android:visibility="gone"
             />
 
-        <cn.custom.widget.widget.LoadingPointView
+        <cn.custom.widget.widget.circleanim.LoadingPointView
             android:id="@+id/id_loading_point_view"
             android:layout_width="60dp"
             android:layout_height="10dp"
             android:layout_marginTop="9dp"
             android:visibility="gone"/>
 
-        <cn.custom.widget.widget.CircleRingView
+        <cn.custom.widget.widget.circleanim.CircleRingView
             android:id="@+id/id_circle_ring_view"
             android:layout_width="179dp"
             android:layout_height="179dp"
@@ -65,14 +102,14 @@
             android:visibility="gone"
             />
 
-        <cn.custom.widget.widget.ObjectAnimateCircleRingView
+        <cn.custom.widget.widget.circleanim.ObjectAnimateCircleRingView
             android:id="@+id/id_object_animate_circle_ring_view"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="15dp"
             android:visibility="gone"/>
 
-        <cn.custom.widget.widget.LoadingScaleAlphaView
+        <cn.custom.widget.widget.circleanim.LoadingScaleAlphaView
             android:id="@+id/id_loading_scale_alpha_view"
             android:layout_width="200dp"
             android:layout_height="60dp"
@@ -81,7 +118,7 @@
             android:visibility="gone"
             />
 
-        <cn.custom.widget.widget.JiKeLikeView
+        <cn.custom.widget.widget.textviewanim.JiKeLikeView
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
             android:background="#d71345"

@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.facebook.stetho.Stetho;
 import com.uphyca.stetho_realm.RealmInspectorModulesProvider;
+import com.zxy.tiny.Tiny;
 
 import cn.cn.retrofit.demo.com.utils.SharePreUtil;
 import cn.multi.language.com.utils.LocaleHelper;

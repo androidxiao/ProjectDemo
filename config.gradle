@@ -23,7 +23,8 @@ ext {
     ]
 
     imageDependencies = [
-            glide: "3.7.0"//在测试recycleView loadmore中使用了，正式项目使用4.0.0
+            glide        : "3.7.0",//在测试recycleView loadmore中使用了，正式项目使用4.0.0
+            compressImage: "0.1.0"
     ]
 
     httpDependencies = [
@@ -57,7 +58,7 @@ ext {
     ]
 
     permissionsDependencies = [
-            easypermissions : "1.0.0",
+            easypermissions: "1.0.0",
     ]
 
     //依赖配置。可以添加可能使用的依赖，需要用，就直接引用就好了。
@@ -81,6 +82,7 @@ ext {
             converterGson   : "com.squareup.retrofit2:converter-gson:${rxDependencies.converterGson}",
             adapterRxjava   : "com.squareup.retrofit2:adapter-rxjava:${rxDependencies.adapterRxjava}",
             okhttp3Log      : "com.squareup.okhttp3:logging-interceptor:${httpDependencies.okhttp3Log}",
-            easyPermissions : "pub.devrel:easypermissions:${permissionsDependencies.easypermissions}"
+            easyPermissions : "pub.devrel:easypermissions:${permissionsDependencies.easypermissions}",
+            compressImage   : "com.zxy.android:tiny:${imageDependencies.compressImage}"
     ]
 }
