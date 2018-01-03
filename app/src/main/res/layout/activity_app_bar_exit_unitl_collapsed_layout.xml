@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:fitsSystemWindows="true"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:background="#d71345"
+        >
+
+        <!--exitUntilCollapsed, 当ScrollView 滑出屏幕时（也就时向上滑动时），滑动View先响应滑动事件，
+        滑动至折叠高度，也就是通过minimum height 设置的最小高度后，就固定不动了，
+        再把滑动事件交给 scrollview 继续滑动。-->
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:minHeight="?attr/actionBarSize"
+            android:gravity="bottom"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            >
+            <!--要配合scroll 一起使用-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="AppBarExitUntilCollapsedActivity"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:text="@string/large_text"/>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

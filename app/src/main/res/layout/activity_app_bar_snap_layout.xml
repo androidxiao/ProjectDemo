@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:fitsSystemWindows="true"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:background="#d71345"
+        >
+
+        <!--snap,意思是：在滚动结束后，如果view只是部分可见，它将滑动到最近的边界。
+        比如，如果view的底部只有25%可见，它将滚动离开屏幕，而如果底部有75%可见，它将滚动到完全显示-->
+
+        <!--解释一下，就是说，比如在屏幕的顶部有个View ，高度200dp,我向上滑动40％后停止，也就 40% 滑出了屏幕，
+        剩下的60%留在屏幕，那么这个属性就会自动将屏幕外的40% 滑回屏幕，结果的整个View都留在屏幕上，
+        相反，如果我向上将60%的部分滑出屏幕，然后停止滑动，那么这个属性会将剩下的40% 也自动滑出屏幕，
+        结果是整个View都在屏幕之外。这就是上面所说的滑动到最近的边界。-->
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:minHeight="?attr/actionBarSize"
+            android:gravity="bottom"
+            app:layout_scrollFlags="scroll|snap"
+            >
+            <!--要配合scroll 一起使用-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="AppBarSnapActivity"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:text="@string/large_text"/>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

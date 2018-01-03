@@ -9,6 +9,14 @@
     </style>
 
 
+    <style name="MDTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/c_499AF7</item>
+        <item name="colorPrimaryDark">@color/c_3ec88e</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
     </style>

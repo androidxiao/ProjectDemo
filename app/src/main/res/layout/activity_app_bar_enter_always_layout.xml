@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:fitsSystemWindows="true"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        android:background="#d71345"
+        >
+
+        <!--,enterAlways,子View 添加layout_scrollFlags属性 的值有enterAlways 时,
+        当ScrollView 向下滑动时，子View 将直接向下滑动，而不管ScrollView 是否滑动到顶部。
+        注意：要与scroll 搭配使用，否则是不能滑动的。-->
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="AppBarEnterAlwaysActivity"
+            app:titleTextColor="@color/white"
+            app:layout_scrollFlags="scroll|enterAlways"
+            >
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:text="@string/large_text"/>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

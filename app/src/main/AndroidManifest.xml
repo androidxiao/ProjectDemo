@@ -238,11 +238,32 @@
         </activity>
 
         <activity android:name="cn.share.system.coom.JianshuWebViewActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <!--AppbarLayout详细用法  start-->
+        <activity android:name="cn.behavior.custom.demo.AppbarLayoutMainActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarScrollActivity"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysActivity"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysCollapsedActivity"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarExitUntilCollapsedActivity"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarSnapActivity"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity"
+            android:theme="@style/MDTheme"/>
+        <!--AppbarLayout详细用法  end-->
 
         <activity android:name="cn.check.permission.demo.cn.PermissionHelperActivity">
             <!--<intent-filter>-->

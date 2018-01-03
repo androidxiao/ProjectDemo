@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:fitsSystemWindows="true"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/id_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:background="#d71345"
+        >
+
+        <!--enterAlwaysCollapsed 是对enterAlways 的补充，当ScrollView 向下滑动的时候，
+        滑动View（也就是设置了enterAlwaysCollapsed 的View）下滑至折叠的高度，
+        当ScrollView 到达滑动范围的结束值的时候，滑动View剩下的部分开始滑动。
+        这个折叠的高度是通过View的minimum height （最小高度）指定的-->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/id_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:minHeight="?attr/actionBarSize"
+            android:gravity="bottom"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            >
+            <!--要配合scroll｜enterAlways 一起使用-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="AppBarEnterAlwaysCollapsedActivity"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:text="@string/large_text"/>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
