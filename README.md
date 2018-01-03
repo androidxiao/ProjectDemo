@@ -52,3 +52,14 @@
 21、自定义饼状图并添加了点击事件
 
 ![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/piechart.gif)
+
+22、AppBarLayout、CollapsingToolbarLayout、CoordinatorLayout的效果展示
+
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/coordinatorLayout_pin.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/coordinatorLayout_scrim.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/enterAlwaysCollapsed.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/exitUntilCollapsed.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/scroll.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/scroll_enteralways.gif)
+![](https://github.com/androidxiao/ProjectDemo/blob/master/assets/snap.gif)
+
