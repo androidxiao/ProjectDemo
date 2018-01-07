@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/id_iv_girl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_200"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/meizhi"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="cn.behavior.custom.demo.behavior.custom.behavior.ScaleHeaderImageBehavior"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textColor="@color/c_3ec88e"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="请输入搜索内容"/>
+    </LinearLayout>
+
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/id_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="cn.behavior.custom.demo.behavior.custom.behavior.ScaleHeaderBehavior"
+        >
+        <!--//appbar_scrolling_view_behavior让NestedScrollView内容最终能够显示在AppBarLayout的下面，否则会显示在顶部-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:text="@string/large_text"/>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -246,10 +246,10 @@
 
         <!--AppbarLayout详细用法  start-->
         <activity android:name="cn.behavior.custom.demo.AppbarLayoutMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarScrollActivity"
             android:theme="@style/MDTheme"/>
@@ -262,8 +262,30 @@
         <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarSnapActivity"
             android:theme="@style/MDTheme"/>
         <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity"
+                  android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity2"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity3"
             android:theme="@style/MDTheme"/>
         <!--AppbarLayout详细用法  end-->
+
+
+        <!--Behavior使用方法以及如何自定义Behavior  start-->
+        <activity android:name="cn.behavior.custom.demo.behavior.activity.BottomSheetBehaviorActivity"/>
+        <activity android:name="cn.behavior.custom.demo.behavior.activity.BottomSheetDialogActivity"
+            android:theme="@style/MDTheme"/>
+        <activity android:name="cn.behavior.custom.demo.behavior.activity.ScaleHeaderBehaviorActivity"
+            android:theme="@style/MDTheme"/>
+        <!--Behavior使用方法以及如何自定义Behavior  end-->
+
+        <!--可展开/收起的RecycleView-->
+        <activity android:name="cn.expandrecyclerview.demo.activity.ExpandRecyclerViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
 
         <activity android:name="cn.check.permission.demo.cn.PermissionHelperActivity">
             <!--<intent-filter>-->

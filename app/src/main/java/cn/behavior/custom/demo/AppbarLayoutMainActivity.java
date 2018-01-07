@@ -13,11 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity;
+import cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity2;
+import cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity3;
 import cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysActivity;
 import cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysCollapsedActivity;
 import cn.behavior.custom.demo.appbarlayout.AppBarExitUntilCollapsedActivity;
 import cn.behavior.custom.demo.appbarlayout.AppBarScrollActivity;
 import cn.behavior.custom.demo.appbarlayout.AppBarSnapActivity;
+import cn.behavior.custom.demo.behavior.activity.BottomSheetBehaviorActivity;
+import cn.behavior.custom.demo.behavior.activity.BottomSheetDialogActivity;
+import cn.behavior.custom.demo.behavior.activity.ScaleHeaderBehaviorActivity;
 import cn.project.demo.com.R;
 
 /**
@@ -49,12 +54,23 @@ public class AppbarLayoutMainActivity extends AppCompatActivity {
 
     private void initData(){
         mActivity = new ArrayList<>();
+//        AppbarLayout详细用法  start
         mActivity.add(AppBarScrollActivity.class);
         mActivity.add(AppBarEnterAlwaysActivity.class);
         mActivity.add(AppBarEnterAlwaysCollapsedActivity.class);
         mActivity.add(AppBarExitUntilCollapsedActivity.class);
         mActivity.add(AppBarSnapActivity.class);
         mActivity.add(CollapsingToolbarLayoutActivity.class);
+        mActivity.add(CollapsingToolbarLayoutActivity2.class);
+        mActivity.add(CollapsingToolbarLayoutActivity3.class);
+//        AppbarLayout详细用法  end
+
+//        Behavior使用方法以及如何自定义Behavior  start
+        mActivity.add(BottomSheetBehaviorActivity.class);
+        mActivity.add(BottomSheetDialogActivity.class);
+        mActivity.add(ScaleHeaderBehaviorActivity.class);
+
+//        Behavior使用方法以及如何自定义Behavior  end
 
     }
 

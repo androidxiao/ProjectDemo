@@ -14,4 +14,10 @@
 
     <dimen name="poster_hero_height">192dp</dimen>
     <dimen name="d_120">120dp</dimen>
+    <dimen name="d_56">56dp</dimen>
+    <dimen name="d_100">100dp</dimen>
+    <dimen name="d_200">200dp</dimen>
+    <dimen name="d_160">160dp</dimen>
+    <dimen name="d_40">40dp</dimen>
+    <dimen name="spacing_normal">10dp</dimen>
 </resources>

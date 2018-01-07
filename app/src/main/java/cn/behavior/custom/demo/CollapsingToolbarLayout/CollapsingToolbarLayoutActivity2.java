@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import cn.behavior.custom.demo.utils.StatusBarUtils;
 import cn.custom.widget.Px2DpUtil;
 import cn.project.demo.com.R;
 
@@ -18,19 +17,19 @@ import cn.project.demo.com.R;
  * Created by chawei on 2018/1/3.
  */
 
-public class CollapsingToolbarLayoutActivity extends AppCompatActivity {
+public class CollapsingToolbarLayoutActivity2 extends AppCompatActivity {
 
     public static final String TAG = "ez";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapsing_toolbar_layout);
+        setContentView(R.layout.activity_collapsing_toolbar_2_layout);
         final ImageView imageView= (ImageView) findViewById(R.id.id_iv_toolbar);
         final TextView textView= (TextView) findViewById(R.id.id_tv_toolbar);
         final AppBarLayout appBarLayout= (AppBarLayout) findViewById(R.id.appbar_layout);
         final Toolbar toolbar= (Toolbar) findViewById(R.id.id_tool_bar);
-        StatusBarUtils.setTranslucentImageHeader(this,0,toolbar);//沉浸状态栏
+//        StatusBarUtils.setTranslucentImageHeader(this,0,toolbar);//沉浸状态栏
         final CollapsingToolbarLayout collapsingToolbarLayout= (CollapsingToolbarLayout) findViewById(R.id.collapse_layout);
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.c_3ec88e));
         final int totalHeight = Px2DpUtil.dp2px(this, 250);
