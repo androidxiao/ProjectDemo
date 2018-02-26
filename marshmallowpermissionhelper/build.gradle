@@ -30,7 +30,7 @@ android {
     buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode 9
         versionName "1.1.7"

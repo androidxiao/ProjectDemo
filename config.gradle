@@ -8,7 +8,7 @@ ext {
             compileSdkVersion: 25,
             buildToolsVersion: "25.0.0",
             minSdkVersion    : 15,
-            targetSdkVersion : 25,
+            targetSdkVersion : 22,
             versionCode      : 1,
             versionName      : "1.8.2",
             supportLibVersion: "25.3.1"
@@ -23,13 +23,14 @@ ext {
     ]
 
     imageDependencies = [
-            glide        : "3.7.0",//在测试recycleView loadmore中使用了，正式项目使用4.0.0
-            compressImage: "0.1.0"
+            glide        : "4.0.0",//在测试recycleView loadmore中使用了，正式项目使用4.0.0
+            compressImage: "0.1.0",
+            bannerVeiw            : "2.0.5",
     ]
 
     httpDependencies = [
-            okhttp3   : "3.8.1",
-            okhttp3Log: "3.4.0"
+            okhttp3   : "3.9.1",
+            okhttp3Log: "3.4.0",
     ]
 
     eventDependencies = [
@@ -83,6 +84,7 @@ ext {
             adapterRxjava   : "com.squareup.retrofit2:adapter-rxjava:${rxDependencies.adapterRxjava}",
             okhttp3Log      : "com.squareup.okhttp3:logging-interceptor:${httpDependencies.okhttp3Log}",
             easyPermissions : "pub.devrel:easypermissions:${permissionsDependencies.easypermissions}",
-            compressImage   : "com.zxy.android:tiny:${imageDependencies.compressImage}"
+            compressImage   : "com.zxy.android:tiny:${imageDependencies.compressImage}",
+            bannerView            : "com.bigkoo:convenientbanner:${imageDependencies.bannerVeiw}"
     ]
 }

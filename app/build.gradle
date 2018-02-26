@@ -125,7 +125,9 @@ dependencies {
     compile librarys.converterGson
     compile librarys.adapterRxjava
     compile librarys.okhttp3Log
+    compile librarys.okhttp3
     compile librarys.glide
     compile librarys.easyPermissions
     compile librarys.compressImage
+    compile librarys.bannerView
 }
