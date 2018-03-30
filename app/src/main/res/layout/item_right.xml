@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/tv_item1"
+            style="@style/TextViewStyleRight"
+            />
+    <TextView
+            android:id="@+id/tv_item2"
+            style="@style/TextViewStyleRight"
+            />
+    <TextView
+            android:id="@+id/tv_item3"
+            style="@style/TextViewStyleRight"
+            />
+    <TextView
+            android:id="@+id/tv_item4"
+            style="@style/TextViewStyleRight"
+            />
+    <TextView
+            android:id="@+id/tv_item5"
+            style="@style/TextViewStyleRight"
+            />
+    <TextView
+            android:id="@+id/tv_item6"
+            style="@style/TextViewStyleRight"
+            />
+    <TextView
+            android:id="@+id/tv_item7"
+            style="@style/TextViewStyleRight"
+            />
+</LinearLayout>

@@ -16,6 +16,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="translucent" parent="Theme.Design.Light.NoActionBar">
+        <item name="android:windowBackground">@color/translucent_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
 
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
@@ -41,5 +47,23 @@
         <item name="android:windowExitAnimation">@anim/pop_scale_left_bot_dismiss</item>
     </style>
 
+    <style name="TextViewStyleLeft">
+        <item name="android:layout_width">@dimen/leftWidth</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <style name="TextViewStyleRight">
+        <item name="android:layout_width">@dimen/rightItemWidth</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+    </style>
 
 </resources>

@@ -3,12 +3,14 @@
           package="cn.project.demo.com">
 
     <supports-screens android:xlargeScreens="true"/>
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- 在sdcard中创建/删除文件的权限 -->
@@ -56,15 +58,7 @@
         <activity android:name="cn.cn.retrofit.demo.com.activity.CowFunctionActivity">
 
         </activity>
-        <activity android:name="cn.recyclerview.loadmore.com.activity.RecyclerViewLoadmoreActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN"/> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
-            <!-- </intent-filter> -->
-        </activity>
         <activity android:name="cn.day.night.model.com.DayNightMainActivity">
 
             <!-- <intent-filter> -->
@@ -96,22 +90,33 @@
         </activity>
         <activity android:name="cn.swiperefreshlayout.demo.cn.SwipeRefreshLayoutActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
-            <!-- </intent-filter> -->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name="cn.tablayout.demo.com.activity.TabLayoutActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="cn.tablayout.demo.com.activity.BottomTabLayoutActivity"
+            android:theme="@style/MDTheme">
+
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
-            <!-- </intent-filter> -->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name="cn.custombehavior.demo.com.CustomBehaviorActivity">
 
@@ -182,21 +187,21 @@
 
         <activity android:name="cn.custom.widget.activity.RecyclerViewShowPopActivity">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
 
         <activity android:name="cn.android.example.knowledge.activity.RandomBgColorActivity">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
         <activity android:name="cn.android.example.knowledge.activity.ShowInstallAppActivity">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
 
@@ -244,46 +249,90 @@
             <!--</intent-filter>-->
         </activity>
 
+
+
+        <activity
+            android:name="cn.login.anim.demo.LoginMainActivity"
+            android:theme="@style/MDTheme">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
         <!--AppbarLayout详细用法  start-->
         <activity android:name="cn.behavior.custom.demo.AppbarLayoutMainActivity">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarScrollActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.appbarlayout.AppBarScrollActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysCollapsedActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.appbarlayout.AppBarEnterAlwaysCollapsedActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarExitUntilCollapsedActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.appbarlayout.AppBarExitUntilCollapsedActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.appbarlayout.AppBarSnapActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.appbarlayout.AppBarSnapActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity"
-                  android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity2"
+        <activity
+            android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity3"
+        <activity
+            android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity2"
+            android:theme="@style/MDTheme"/>
+        <activity
+            android:name="cn.behavior.custom.demo.CollapsingToolbarLayout.CollapsingToolbarLayoutActivity3"
             android:theme="@style/MDTheme"/>
         <!--AppbarLayout详细用法  end-->
+
+        <activity android:name="cn.behavior.custom.demo.behavior.activity.SnapRecyclerViewActivity"/>
 
 
         <!--Behavior使用方法以及如何自定义Behavior  start-->
         <activity android:name="cn.behavior.custom.demo.behavior.activity.BottomSheetBehaviorActivity"/>
-        <activity android:name="cn.behavior.custom.demo.behavior.activity.BottomSheetDialogActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.behavior.activity.BottomSheetDialogActivity"
             android:theme="@style/MDTheme"/>
-        <activity android:name="cn.behavior.custom.demo.behavior.activity.ScaleHeaderBehaviorActivity"
+        <activity
+            android:name="cn.behavior.custom.demo.behavior.activity.ScaleHeaderBehaviorActivity"
             android:theme="@style/MDTheme"/>
         <!--Behavior使用方法以及如何自定义Behavior  end-->
 
         <!--可展开/收起的RecycleView-->
         <activity android:name="cn.expandrecyclerview.demo.activity.ExpandRecyclerViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <!--动画修改Toolbar、TabLayout和StatueBar背景色-->
+        <activity
+            android:name="cn.tablayout.demo.com.activity.UpdateToolbarColorActivity"
+            android:theme="@style/MDTheme">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+
+        <!--悬停搜索框-->
+        <activity
+            android:name="cn.tablayout.demo.com.activity.StopSearchViewBelowToolbarActivity"
+            android:theme="@style/MDTheme">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
 
 
@@ -293,6 +342,65 @@
             <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
+
+        <activity
+            android:name="cn.custom.widget.activity.RecyclerViewGridManagerActivity"
+            android:theme="@style/MDTheme">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+
+
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="cn.custom.widget.activity.CustomTagActivity"
+            android:theme="@style/MDTheme">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+
+
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name="cn.example.stockmarket.StockActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="cn.android.example.knowledge.activity.ScreenRecorderActivity"
+                  >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <service android:name="cn.android.example.knowledge.service.FloatingViewService"
+            android:enabled="true"/>
+
+        <activity android:name="cn.cn.activity.ViewDragHelperDemo1Activity">
+
+        </activity>
+
+        <activity android:name="cn.com.examples.customtouch.TouchMainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name="cn.com.examples.customtouch.MoveLoggerActivity"/>
+        <activity android:name="cn.com.examples.customtouch.MultitouchActivity"/>
+        <activity android:name="cn.com.examples.customtouch.TouchDelegateActivity"/>
+        <activity android:name="cn.com.examples.customtouch.TouchForwardActivity"/>
+        <activity android:name="cn.com.examples.customtouch.TouchInterceptActivity"/>
+        <activity android:name="cn.com.examples.customtouch.TouchListenerActivity"/>
+        <activity android:name="cn.com.examples.customtouch.TwoDimensionGestureScrollActivity"/>
+        <activity android:name="cn.com.examples.customtouch.TwoDimensionScrollActivity"/>
     </application>
 
 </manifest>

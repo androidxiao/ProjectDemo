@@ -40,6 +40,13 @@
     <color name="c_A78B7A">#A78B7A</color>
     <color name="c_D36E8F">#D36E8F</color>
     <color name="c_8B8197">#8B8197</color>
+    <color name="c_de4930">#DE4930</color>
+
+    <color name="blue">#FF3a80d2</color>
+    <color name="grey">#ff7b828b</color>
+    <color name="title_bg_color">#1D2228</color>
+
+    <color name="translucent_background">#00000000</color>
 
     <!-- Gear -->
     <color name="red">#DC152B</color>

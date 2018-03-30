@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="bottom|center"
-                        android:text="王先生"
+                        android:text="NAME"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"/>
 
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="toolBar的文字"
+                android:text="标题"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"/>
 
@@ -124,7 +124,7 @@
         android:layout_gravity="center"
         app:layout_anchor="@+id/main_toolbar"
         app:layout_anchorGravity="top|center"
-        app:layout_behavior="cn.behavior.custom.demo.behavior.custom.behavior.ScaleAndTranslateImageBehavior"
+        app:layout_behavior="cn.behavior.custom.demo.behavior.custom.behavior.ScaleAndTranslateImageBehavior2"
         app:srcCompat="@mipmap/ic_launcher"/>
 
         <!--app:finalHeight="@dimen/image_final_width"-->

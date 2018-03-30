@@ -4,7 +4,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import cn.expandrecyclerview.demo.model.ExpandableGroup;
-import cn.expandrecyclerview.demo.viewholders.ChildViewHolder;
 import cn.project.demo.com.R;
 
 /**
@@ -23,9 +22,9 @@ public class ChildContentViewHolder extends cn.expandrecyclerview.demo.viewholde
 
     public void onBind(ChildText phone, ExpandableGroup group) {
         phoneName.setText(phone.getName());
-        if (group.getTitle().equals("Android")) {
+        if (group.getTitle().equals("水果")) {
             phoneName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_launcher, 0, 0, 0);
-        } else if (group.getTitle().equals("iOS")) {
+        } else if (group.getTitle().equals("球类")) {
             phoneName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_launcher, 0, 0, 0);
         } else {
             phoneName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_launcher, 0, 0, 0);

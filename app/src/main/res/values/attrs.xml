@@ -17,4 +17,11 @@
     </declare-styleable>
 
 
+    <declare-styleable name="CenterFlowLayout">
+        <!--相当于xml的marginLeft-->
+        <attr name="childSpacing" format="dimension"/>
+        <!--相当于xml的marginTop-->
+        <attr name="rowSpacing" format="dimension"/>
+    </declare-styleable>
+
 </resources>

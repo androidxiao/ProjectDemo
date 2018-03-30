@@ -8,8 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.project.demo.com.R;
-
 /**
  * Created by chawei on 2017/9/26.
  */
@@ -17,9 +15,8 @@ import cn.project.demo.com.R;
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> fragmentsList;
-    private String[] titles=new String[]{"A","B","C"};
+    private String[] titles=new String[]{"A","B","C","e","f"};
     private Context mContext;
-    private int[]imgResId=new int[]{R.mipmap.home_icon_normal,R.mipmap.home_icon_normal,R.mipmap.home_icon_normal};
     public FragmentAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -49,12 +46,6 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         if(titles != null && titles.length > 0) {
             return titles[position];
         }
-//
-//        Drawable drawable = ContextCompat.getDrawable(mContext, imgResId[position]);
-//        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-//        ImageSpan imageSpan = new ImageSpan(drawable,ImageSpan.ALIGN_BOTTOM);
-//        SpannableString sb = new SpannableString(" "+titles[position]);
-//        sb.setSpan(imageSpan,0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return null;
     }
 

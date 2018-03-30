@@ -23,6 +23,7 @@ import cn.behavior.custom.demo.appbarlayout.AppBarSnapActivity;
 import cn.behavior.custom.demo.behavior.activity.BottomSheetBehaviorActivity;
 import cn.behavior.custom.demo.behavior.activity.BottomSheetDialogActivity;
 import cn.behavior.custom.demo.behavior.activity.ScaleHeaderBehaviorActivity;
+import cn.behavior.custom.demo.behavior.activity.SnapRecyclerViewActivity;
 import cn.project.demo.com.R;
 
 /**
@@ -63,6 +64,7 @@ public class AppbarLayoutMainActivity extends AppCompatActivity {
         mActivity.add(CollapsingToolbarLayoutActivity.class);
         mActivity.add(CollapsingToolbarLayoutActivity2.class);
         mActivity.add(CollapsingToolbarLayoutActivity3.class);
+        mActivity.add(SnapRecyclerViewActivity.class);
 //        AppbarLayout详细用法  end
 
 //        Behavior使用方法以及如何自定义Behavior  start

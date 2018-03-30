@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatCheckBox
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_custom_checked_item_view"
+    android:button="@null"
+    android:drawablePadding="10dp"
+    android:drawableRight="@drawable/custom_checked_item_view_selector"
+    android:padding="10dp"
+    android:text="标题"
+    android:textColor="@color/cb_text_green_selector"
+    tools:text="逆天邪神"/>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:rotation="180"
+        android:src="@drawable/shape_triangle"/>
+
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/message_shape"
+        />
+
+    <TextView
+        android:id="@+id/id_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/id_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/id_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_40"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/id_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+        <!--app:fastScrollEnabled="true"-->
+    <!--app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"-->
+    <!--app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"-->
+    <!--app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"-->
+    <!--app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"-->
+
+</LinearLayout>

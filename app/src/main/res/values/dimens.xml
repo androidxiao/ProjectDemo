@@ -19,5 +19,14 @@
     <dimen name="d_200">200dp</dimen>
     <dimen name="d_160">160dp</dimen>
     <dimen name="d_40">40dp</dimen>
+    <dimen name="d_4">4dp</dimen>
+
     <dimen name="spacing_normal">10dp</dimen>
+
+    <dimen name="header_height">160dp</dimen>
+    <dimen name="pan_content_width">1280dp</dimen>
+    <dimen name="pan_content_height">720dp</dimen>
+
+    <dimen name="leftWidth">120dip</dimen>
+    <dimen name="rightItemWidth">100dip</dimen>
 </resources>

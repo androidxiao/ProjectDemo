@@ -220,4 +220,20 @@
 
     </string>
 
+
+    <string name="string">Hello world!</string>
+    <string name="hello_str">Hello %s!</string>
+    <string name="string_w" formatted="false">%s 上了 %s 天班</string>
+    <string name="html_str"><![CDATA[Hello <b>world</b>!]]></string>
+    <string name="other_html_str"><![CDATA[<font style=\"font-size:12px;line-height:16px\" color=\"red\">Hello world!</font><br/><br/>换行了哦]]></string>
+    <plurals name="plural_string">
+        <item quantity="one">%s apple</item>
+        <item quantity="other">%s apples</item>
+    </plurals>
+    <string-array name="array_of_strings">
+        <item>苹果</item>
+        <item>香蕉</item>
+        <item>橘子</item>
+    </string-array>
+
 </resources>
