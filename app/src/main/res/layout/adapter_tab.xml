@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/recommend_channel"
+            android:autoLink="all"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="推荐频道" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="75dp"
+        android:layout_height="2dp"
+        android:id="@+id/indicator"
+        android:background="#237ecb" />
+
+
+</LinearLayout>

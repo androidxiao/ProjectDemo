@@ -1,58 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-        >
+              android:orientation="vertical"
+    >
     <!--整体分为上下 即title和content 然后title再分左右 content再分左右-->
 
     <!--上部分 title左右-->
-    <LinearLayout android:id="@+id/titleLayout"
-                  android:orientation="horizontal"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:background="@color/title_bg_color"
-            >
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title_bg_color"
+        android:orientation="horizontal"
+        >
 
         <include layout="@layout/title_left"/>
+
         <include layout="@layout/title_right"/>
     </LinearLayout>
 
     <!--上部分 content左右-->
-    <ScrollView android:id="@+id/contentScrollView"
-                android:scrollbars="none"
-                  android:layout_width="fill_parent"
-                  android:layout_height="fill_parent"
-                  android:background="@color/grey"
-            >
-    <LinearLayout android:id="@+id/contentLayout"
-                  android:orientation="horizontal"
-                  android:layout_width="fill_parent"
-                  android:layout_height="fill_parent"
-            >
-        <!--左边listview-->
-            <cn.example.stockmarket.view.MyListView
-                    android:id="@+id/contentListViewLeft"
-                    android:dividerHeight="0dip"
-                    android:divider="@null"
-                    android:layout_width="@dimen/leftWidth"
-                      android:layout_height="fill_parent"
+    <ScrollView
+        android:id="@+id/contentScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/grey"
+        android:scrollbars="none"
+        >
 
-                    />
-        <!--右边listview-->
-        <cn.example.stockmarket.view.MySyncHorizontalScrollView android:id="@+id/rightContentHorscrollView"
-                                                                 android:layout_width="match_parent"
-                                                                 android:layout_height="match_parent"
-                                                                 android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            >
+            <!--左边listview-->
             <cn.example.stockmarket.view.MyListView
+                android:id="@+id/contentListViewLeft"
+                android:layout_width="@dimen/leftWidth"
+                android:layout_height="fill_parent"
+                android:divider="@null"
+                android:dividerHeight="0dip"
+                />
+            <!--右边listview-->
+            <cn.example.stockmarket.view.MySyncHorizontalScrollView
+                android:id="@+id/rightContentHorscrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <cn.example.stockmarket.view.MyListView
                     android:id="@+id/contentListViewRight"
-                    android:dividerHeight="0dip"
-                    android:divider="@null"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-
+                    android:divider="@null"
+                    android:dividerHeight="0dip"
                     />
-                </cn.example.stockmarket.view.MySyncHorizontalScrollView>
+            </cn.example.stockmarket.view.MySyncHorizontalScrollView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
