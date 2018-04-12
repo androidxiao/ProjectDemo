@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/id_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="我是测试用的"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:layout_toLeftOf="@+id/id_tv_top"/>
+
+    <TextView
+        android:id="@+id/id_tv_top"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:text="置顶"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:layout_toLeftOf="@+id/id_tv_delete"/>
+
+    <TextView
+        android:id="@+id/id_tv_delete"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:text="移除"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:layout_toLeftOf="@+id/id_iv"/>
+
+
+    <ImageView
+        android:id="@+id/id_iv"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/manage_icon_normal"
+        android:layout_alignParentRight="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#d3d3d3"/>
+</RelativeLayout>
