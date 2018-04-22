@@ -7,10 +7,12 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +21,8 @@ import android.widget.Toast;
 import java.util.Collections;
 import java.util.List;
 
+import cn.cn.retrofit.demo.com.utils.ScreenUtil;
+import cn.custom.widget.Px2DpUtil;
 import cn.project.demo.com.R;
 
 
@@ -311,7 +315,13 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         public ChannelHolder(View itemView) {
             super(itemView);
+            int validWidth = ScreenUtil.getScreenWidth() - Px2DpUtil.dp2px(mContext, 45);
+            int childWidth = validWidth / 4;
             name = (TextView) itemView.findViewById(R.id.channel_name);
+            FrameLayout.LayoutParams params =new FrameLayout.LayoutParams(childWidth,Px2DpUtil.dp2px(mContext,35));
+            params.setMargins(0,Px2DpUtil.dp2px(mContext,5),0,0);
+            name.setLayoutParams(params);
+            name.setGravity(Gravity.CENTER);
             delete = (ImageView) itemView.findViewById(R.id.channel_delete);
         }
     }

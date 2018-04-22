@@ -7,7 +7,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,10 +73,10 @@ public class ChannelActivity extends AppCompatActivity implements ChannelAdapter
         mAdapter.setRecommend(true);
         mAdapter.setOnItemRangeChangeListener(this);
         mRecyclerView.setAdapter(mAdapter);
-        WindowManager m = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        int spacing = (m.getDefaultDisplay().getWidth() - dip2px(this, 70) * 4) / 5;
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(4,spacing,true));
-        ItemDragCallback callback=new ItemDragCallback(mAdapter,2);
+//        WindowManager m = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+//        int spacing = (m.getDefaultDisplay().getWidth() - dip2px(this, 70) * 4) / 5;
+//        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(4,dip2px(this,2.5f),true));
+        ItemDragCallback callback=new ItemDragCallback(mAdapter,dip2px(this,5f));
         ItemTouchHelper helper=new ItemTouchHelper(callback);
         helper.attachToRecyclerView(mRecyclerView);
     }

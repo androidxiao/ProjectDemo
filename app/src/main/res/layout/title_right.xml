@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cn.example.stockmarket.view.MySyncHorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                                                         android:id="@+id/rightTitleHorscrollView"
-                                                         android:layout_width="match_parent"
-                                                         android:layout_height="match_parent"
-                                                         android:scrollbars="none">
+                                                        android:id="@+id/rightTitleHorscrollView"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:scrollbars="none">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="horizontal"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal">
+
         <TextView
-                android:id="@+id/tv_item1"
-                style="@style/TextViewStyleRight"
-                android:text="最新"
-                />
+            android:id="@+id/tv_item1"
+            style="@style/TextViewStyleRight"
+            android:text="最新"
+            />
+
         <TextView
-                android:id="@+id/tv_item2"
-                style="@style/TextViewStyleRight"
-                android:text="跌涨"
-                />
+            android:id="@+id/tv_item2"
+            style="@style/TextViewStyleRight"
+            android:text="跌涨"
+            />
+
         <TextView
-                android:id="@+id/tv_item3"
-                style="@style/TextViewStyleRight"
-                android:text="跌涨幅"
-                />
+            android:id="@+id/tv_item3"
+            style="@style/TextViewStyleRight"
+            android:text="跌涨幅"
+            />
+
         <TextView
-                android:id="@+id/tv_item4"
-                style="@style/TextViewStyleRight"
-                android:text="开盘"
-                />
+            android:id="@+id/tv_item4"
+            style="@style/TextViewStyleRight"
+            android:text="开盘"
+            />
+
         <TextView
-                android:id="@+id/tv_item5"
-                style="@style/TextViewStyleRight"
-                android:text="最高"
-                />
+            android:id="@+id/tv_item5"
+            style="@style/TextViewStyleRight"
+            android:text="最高"
+            />
+
         <TextView
-                android:id="@+id/tv_item6"
-                style="@style/TextViewStyleRight"
-                android:text="最低"
-                />
+            android:id="@+id/tv_item6"
+            style="@style/TextViewStyleRight"
+            android:text="最低"
+            />
+
         <TextView
-                android:id="@+id/tv_item7"
-                style="@style/TextViewStyleRight"
-                android:text="昨收"
-                />
+            android:id="@+id/tv_item7"
+            android:layout_marginRight="15dp"
+            android:background="#d71345"
+            style="@style/TextViewStyleRight"
+            android:text="昨收"
+            />
     </LinearLayout>
 </cn.example.stockmarket.view.MySyncHorizontalScrollView>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="78dp"
+    android:layout_width="wrap_content"
     android:layout_height="38dp">
 
     <TextView
         android:id="@+id/channel_name"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:gravity="center"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="3dp"
         android:textStyle="bold"
         android:textSize="14sp"
         android:layout_gravity="bottom"

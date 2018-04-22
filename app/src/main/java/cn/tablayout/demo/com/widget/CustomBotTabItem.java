@@ -84,7 +84,7 @@ public class CustomBotTabItem {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                mViewPager.setCurrentItem(position);
+//                mViewPager.setCurrentItem(position);
                 scaleTab(view);
             }
         });

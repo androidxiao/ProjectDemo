@@ -45,6 +45,7 @@ public class StockActivity extends Activity {
         rightAdapter = new RightAdapter(this, 0, new ArrayList<Product>());
         contentListViewRight.setAdapter(rightAdapter);
 
+
         //get data
         new Thread(){
             @Override

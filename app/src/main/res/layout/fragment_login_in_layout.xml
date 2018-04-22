@@ -30,12 +30,13 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/shape_login_et_bg"
         android:hint="密码"
+        android:inputType="textPassword"
         android:paddingLeft="30dp"
         android:textColor="@color/white"
-        android:inputType="textPassword"
         android:textColorHint="@color/white"/>
 
     <Button
+        android:id="@+id/id_btn_login"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_below="@+id/id_et2"
@@ -45,5 +46,29 @@
         android:text="登录"
         android:textColor="#95ffffff"
         android:textSize="40sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <cn.login.anim.demo.TransMenuView
+            android:id="@+id/id_trans"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/id_btn_click_me"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:text="点我"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
