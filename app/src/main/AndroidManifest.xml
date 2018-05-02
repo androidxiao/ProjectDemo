@@ -410,11 +410,26 @@
         <activity android:name="cn.com.examples.customtouch.TwoDimensionScrollActivity"/>
 
         <activity android:name="cn.example.stockmarket.CoinActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name="cn.touch.demo.TouchDemoMainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name="cn.touch.demo.ScrollViewRvActivity"/>
+        <activity android:name="cn.rv.item.longpress.drag.RvItemDragActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

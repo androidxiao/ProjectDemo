@@ -89,10 +89,11 @@
 
         <cn.custom.widget.widget.circleanim.LoadingPointView
             android:id="@+id/id_loading_point_view"
-            android:layout_width="60dp"
-            android:layout_height="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:visibility="gone"/>
+            android:background="#d71345"
+            android:visibility="visible"/>
 
         <cn.custom.widget.widget.circleanim.CircleRingView
             android:id="@+id/id_circle_ring_view"

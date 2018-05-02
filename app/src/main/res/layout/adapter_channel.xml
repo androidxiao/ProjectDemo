@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="38dp">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/channel_name"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
         android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="14sp"
+        android:textColor="#d9d6fc"
+        android:textSize="12sp"
         android:layout_gravity="bottom"
-        android:background="#f0f0f0" />
+        android:background="@drawable/shape_channel_bg" />
 
     <ImageView
         android:layout_width="15dp"
         android:id="@+id/channel_delete"
         android:layout_height="15dp"
         android:layout_gravity="right|top"
+        android:layout_marginTop="5dp"
         android:visibility="gone"
-        android:src="@drawable/icon_close" />
+        android:src="@mipmap/icon_close" />
 </FrameLayout>

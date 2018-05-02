@@ -90,4 +90,13 @@ public class FlashTextView extends View {
             objectAnimator.start();
         }
     };
+
+
+    @Override
+    protected void onDetachedFromWindow() {
+        if (objectAnimator != null) {
+            objectAnimator.cancel();
+        }
+        super.onDetachedFromWindow();
+    }
 }

@@ -73,7 +73,7 @@ public class LoadingPointView extends View {
         mPaintWidth = Px2DpUtil.dp2px(context, 2);
         mCircleX = Px2DpUtil.dp2px(context, 40);
         mCircleY = Px2DpUtil.dp2px(context, 40);
-        mRadius = Px2DpUtil.dp2px(context, 5);
+        mRadius = Px2DpUtil.dp2px(context, 3);
     }
 
     @Override

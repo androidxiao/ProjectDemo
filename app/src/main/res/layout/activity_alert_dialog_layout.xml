@@ -3,5 +3,12 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <include layout="@layout/title_left"/>
+
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:onClick="alertDialog"
+        android:text="点击"/>
 </LinearLayout>

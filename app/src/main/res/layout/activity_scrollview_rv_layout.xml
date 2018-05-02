@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/id_header_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#d71345"/>
+
+
+            <cn.touch.demo.VRecyclerView
+                android:id="@+id/id_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="LinearLayoutManager"/>
+        </LinearLayout>
+
+
+
+</LinearLayout>
