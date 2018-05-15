@@ -20,6 +20,7 @@ public class ItemDragCallback extends ItemTouchHelper.Callback {
         this.mAdapter = mAdapter;
     }
 
+
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         ChannelAdapter adapter = (ChannelAdapter) recyclerView.getAdapter();

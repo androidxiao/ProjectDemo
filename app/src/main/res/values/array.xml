@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ring_colors">
+        <item>#9f42dc</item>
+        <item>#786ef0</item>
+        <item>#3cc8f0</item>
+        <item>#9eeaff</item>
+        <item>#3adeb6</item>
+        <item>#a7f7be</item>
+        <item>#f7ee6d</item>
+        <item>#ffae57</item>
+        <item>#ff6057</item>
+        <item>#b22913</item>
+    </array>
+</resources>

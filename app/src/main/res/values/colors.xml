@@ -1,5 +1,6 @@
 <resources>
 
+    <color name="color_window_background">#121b3c</color>
 
     <color name="placeholder_grey">#d71345</color>
     <color name="placeholder_grey_20">#20d71345</color>

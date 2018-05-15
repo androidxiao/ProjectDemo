@@ -29,4 +29,9 @@
 
     <dimen name="leftWidth">120dip</dimen>
     <dimen name="rightItemWidth">100dip</dimen>
+
+    <dimen name="pie_default_radius">100dp</dimen>
+    <dimen name="pie_center_radius">70dp</dimen>
+    <dimen name="pie_text_size">16sp</dimen>
+    <dimen name="pie_shader_size">6dp</dimen>
 </resources>

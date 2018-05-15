@@ -9,7 +9,8 @@
     android:focusable="true">
 
 
-        <LinearLayout
+        <cn.touch.demo.TouchListenerScrollView
+            android:id="@+id/id_touch_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -21,12 +22,12 @@
                 android:background="#d71345"/>
 
 
-            <cn.touch.demo.VRecyclerView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/id_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="LinearLayoutManager"/>
-        </LinearLayout>
+        </cn.touch.demo.TouchListenerScrollView>
 
 
 

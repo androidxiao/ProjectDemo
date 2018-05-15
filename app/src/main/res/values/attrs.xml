@@ -24,4 +24,12 @@
         <attr name="rowSpacing" format="dimension"/>
     </declare-styleable>
 
+
+    <declare-styleable name="PieChartView">
+        <attr name="pie_radius" format="dimension" />
+        <attr name="centerCircle_radius" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="shaderSize" format="dimension"/>
+    </declare-styleable>
+
 </resources>

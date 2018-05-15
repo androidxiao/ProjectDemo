@@ -18,9 +18,9 @@ public class ChannelActivity extends AppCompatActivity implements ChannelAdapter
     private RecyclerView mRecyclerView;
     private List<ChannelBean> mList;
     private ChannelAdapter mAdapter;
-    private String select[] = {"要闻", "体育", "新时代", "汽车", "时尚", "国际", "电影", "财经", "游戏", "科技", "房产", "政务", "图片", "独家"};
-    private String recommend[] = {"娱乐", "军事", "文化", "视频", "股票", "动漫", "理财", "电竞", "数码", "星座", "教育", "美容", "旅游"};
-    private String city[] = {"重庆", "深圳", "汕头", "东莞", "佛山", "江门", "湛江", "惠州", "中山", "揭阳", "韶关", "茂名", "肇庆", "梅州", "汕尾", "河源", "云浮", "四川"};
+    private String mSelected[] = {"A", "B", "C", "D", "E", "F", "G", "H"};
+    private String mRecommend[] = {"11", "22", "33", "44", "55", "66", "77", "88"};
+    private String mUnChoose[] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,32 +44,32 @@ public class ChannelActivity extends AppCompatActivity implements ChannelAdapter
         title.setLayoutId(R.layout.adapter_title);
         title.setSpanSize(4);
         mList.add(title);
-//        for (String bean : select) {
+//        for (String bean : mSelected) {
 //            mList.add(new ChannelBean(bean, 1, R.layout.adapter_channel, true));
 //        }
-        for (int i=0;i<select.length;i++) {
+        for (int i=0;i<mSelected.length;i++) {
             if(i==0) {
-                mList.add(new ChannelBean(select[i], 1, R.layout.adapter_channel, true,true));
+                mList.add(new ChannelBean(mSelected[i], 1, R.layout.adapter_channel, true,true));
             }else{
-                mList.add(new ChannelBean(select[i], 1, R.layout.adapter_channel, true,false));
+                mList.add(new ChannelBean(mSelected[i], 1, R.layout.adapter_channel, true,false));
             }
         }
         ChannelBean tabBean = new ChannelBean();
         tabBean.setLayoutId(R.layout.adapter_tab);
         tabBean.setSpanSize(4);
         mList.add(tabBean);
-        List<ChannelBean> recommendList = new ArrayList<>();
-        for (String bean : recommend) {
-            recommendList.add(new ChannelBean(bean, 1, R.layout.adapter_channel, true));
+        List<ChannelBean> mRecommendList = new ArrayList<>();
+        for (String bean : mRecommend) {
+            mRecommendList.add(new ChannelBean(bean, 1, R.layout.adapter_channel, true));
         }
-        List<ChannelBean> cityList = new ArrayList<>();
-        for (String bean : city) {
-            cityList.add(new ChannelBean(bean, 1, R.layout.adapter_channel, false));
+        List<ChannelBean> mUnChooseList = new ArrayList<>();
+        for (String bean : mUnChoose) {
+            mUnChooseList.add(new ChannelBean(bean, 1, R.layout.adapter_channel, false));
         }
-        mList.addAll(recommendList);
-        mAdapter = new ChannelAdapter(this, mList, recommendList);
+        mList.addAll(mRecommendList);
+        mAdapter = new ChannelAdapter(this, mList, mRecommendList);
         mAdapter.setFixSize(1);
-        mAdapter.setSelectedSize(select.length);
+        mAdapter.setSelectedSize(mSelected.length);
         mAdapter.setRecommend(true);
         mAdapter.setOnItemRangeChangeListener(this);
         mRecyclerView.setAdapter(mAdapter);

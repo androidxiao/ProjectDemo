@@ -13,7 +13,6 @@ import android.widget.TextView;
 import java.util.Collections;
 import java.util.List;
 
-import cn.cn.retrofit.demo.com.utils.LogUtil;
 import cn.cn.retrofit.demo.com.utils.ScreenUtil;
 import cn.custom.widget.Px2DpUtil;
 import cn.project.demo.com.R;
@@ -33,9 +32,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.adapter_channel, parent, false);
-
         return new ChannelHolder(view);
-
     }
 
     @Override
@@ -47,6 +44,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private void setChannel(final ChannelHolder holder, final ChannelBean bean) {
         holder.name.setText(bean.getName());
         int position = holder.getLayoutPosition();
+        //点击标签删除已选标签
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +56,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 }
             }
         });
-
+        //长按进入编辑状态
         holder.name.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -68,13 +66,14 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 return true;
             }
         });
+        //点击X删除已选标签
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 removeFromSelected(holder);
             }
         });
-
+        //是否是编辑状态且第一个不可编辑
         if (isEdit&&position!=0) {
             holder.delete.setVisibility(View.VISIBLE);
         } else {
@@ -82,6 +81,10 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    /**
+     * 删除已选标签
+     * @param holder
+     */
     private void removeFromSelected(ChannelHolder holder) {
         int position = holder.getLayoutPosition();
         holder.delete.setVisibility(View.GONE);
@@ -90,7 +93,11 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         notifyDataSetChanged();
     }
 
-
+    /**
+     * 对拖拽的元素进行排序
+     * @param fromPosition
+     * @param toPosition
+     */
     void itemMove(int fromPosition, int toPosition) {
         if (fromPosition < toPosition) {
             for (int i = fromPosition; i < toPosition; i++) {
