@@ -11,6 +11,13 @@
         android:layout_height="225dp"/>
 
 
+    <!--<cn.custom.widget.widget.AnimateScalePieChartView-->
+        <!--android:id="@+id/id_animate_pie_view"-->
+        <!--android:layout_width="225dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_height="225dp"/>-->
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

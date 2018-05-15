@@ -23,73 +23,87 @@ import cn.project.demo.com.R;
  * Created by chawei on 2018/5/13.
  */
 
-public class AnimatePieChartView extends View {
+public class AnimateScalePieChartView extends View {
 
     public static final String TAG = "ez";
 
     private final float DEFAULT_START_ANGLE = 180;
-    //某块饼图平移的距离
-    public static final int TRANS_DIS = -20;
-    private Paint mPaintOuter;
-    private Paint mPaintCenter;
-    private Paint mPaintShadow;
 
+    /*
+     * mPaint1: for sector
+     * mPaint2: for center circle and center text
+     * mPaint3: for center circle shadow
+     */
+    private Paint mPaint1;
+    private Paint mPaint2;
+    private Paint mPaint3;
+
+    //get padding size
     private int mPaddingTop;
     private int mPaddingBottom;
     private int mPaddingStart;
     private int mPaddingEnd;
 
-    //圆心
+    //coordinate for center of the view
     private int mCenterX;
     private int mCenterY;
 
-    //开始角度
     private float mStartAngle;
     private float mMaxValue;
-    //文字大小
     private float mTextSize;
-    //阴影大小
     private float mShaderSize;
-    //当前颜色
+
+    //fraction for animator
+    private float curtFraction = 1f;
+    private float curtFractionTouch = 1f;
+    private float curtFractionTouch2 = 0f;
+
     private int mCurrentColor;
 
+    //mIndex for which sector touched
     private int mIndex;
 
-    //颜色
+    //list for pie params
     private List<Integer> mPieColorList;
-    //颜色占比
     private List<Float> mPieValueList;
-    //饼图文字
     private List<String> mPieStringList;
 
-    //选中角度
+    //list for the middle angle of each sector
     private List<Float> angleList;
 
-    //半径
+    //sector radius
     private int mRadius;
 
-    //中心圆半径
+    //center circle radius
     private int circleRadius;
 
+    //coordinate for touch
+    private float touchX;
+    private float touchY;
 
-    //中心圆文字
+    //animator for init pie chart
+    private ValueAnimator animator;
+
+    //animator for touch
+    private ValueAnimator animatorTouch;
+
+    //center text
     private String text;
 
-    //中心圆颜色
+    //center bg
     private int centerColor;
 
-    public AnimatePieChartView(Context context) {
+    public AnimateScalePieChartView(Context context) {
         super(context, null);
     }
 
-    public AnimatePieChartView(Context context, AttributeSet attrs) {
+    public AnimateScalePieChartView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public AnimatePieChartView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AnimateScalePieChartView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        //自定义一些属性
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PieChartView);
 
         mRadius = a.getDimensionPixelSize(R.styleable.PieChartView_pie_radius,
@@ -111,10 +125,11 @@ public class AnimatePieChartView extends View {
         mPaddingEnd = getPaddingRight();
 
         initPaint();
+        initAnimator();
     }
 
     /**
-     * 初始化Paint
+     * init Paint and params for pie chart
      */
     private void initPaint() {
         mPieColorList = new ArrayList<>();
@@ -123,23 +138,53 @@ public class AnimatePieChartView extends View {
         angleList = new ArrayList<>();
 
 
-        mPaintOuter = new Paint();
-        mPaintOuter.setStyle(Paint.Style.FILL);
-        mPaintOuter.setAntiAlias(true);
+        mPaint1 = new Paint();
+        mPaint1.setStyle(Paint.Style.FILL);
+        mPaint1.setAntiAlias(true);
 
-        mPaintCenter = new Paint();
-        mPaintCenter.setColor(centerColor);
-        mPaintCenter.setStyle(Paint.Style.FILL);
-        mPaintCenter.setAntiAlias(true);
-        mPaintCenter.setTextSize(mTextSize);
-        mPaintCenter.setTextAlign(Paint.Align.CENTER);
+        mPaint2 = new Paint();
+        mPaint2.setColor(centerColor);
+        mPaint2.setStyle(Paint.Style.FILL);
+        mPaint2.setAntiAlias(true);
+        mPaint2.setTextSize(mTextSize);
+        mPaint2.setTextAlign(Paint.Align.CENTER);
 
-        mPaintShadow = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaintShadow.setAntiAlias(true);
+        mPaint3 = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPaint3.setAntiAlias(true);
     }
 
     /**
-     * 获取饼图每一部分的旋转角度
+     * init animators
+     */
+    private void initAnimator() {
+        animator = ValueAnimator.ofFloat(0, 1f);
+        animator.setDuration(1000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                curtFraction = animation.getAnimatedFraction();
+                mStartAngle = DEFAULT_START_ANGLE;
+                invalidate();
+            }
+        });
+
+        animatorTouch = ValueAnimator.ofFloat(1f, 1.07f);
+//        animatorTouch = ValueAnimator.ofFloat(1f, 1.0f);
+        animatorTouch.setDuration(400);
+        animatorTouch.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                curtFractionTouch = (Float) animation.getAnimatedValue();
+                curtFractionTouch2 = 0.02f * animation.getAnimatedFraction();
+                invalidate();
+            }
+        });
+
+    }
+
+    /**
+     * @param i mIndex for params list
+     * @return angle to rotation
      */
     private float getRotationAngle(int i) {
         float angleR;
@@ -166,7 +211,6 @@ public class AnimatePieChartView extends View {
         return angleR;
     }
 
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -192,33 +236,40 @@ public class AnimatePieChartView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         mCenterX = mPaddingStart + (w - mPaddingStart - mPaddingEnd) / 2;
         mCenterY = mPaddingTop + (h - mPaddingTop - mPaddingBottom) / 2;
-        mPaintShadow.setShader(new RadialGradient(mCenterX, mCenterY,
+        mPaint3.setShader(new RadialGradient(mCenterX, mCenterY,
                 circleRadius + mShaderSize,
                 Color.TRANSPARENT, Color.TRANSPARENT, Shader.TileMode.CLAMP));
     }
 
     /**
-     * 旋转前的饼图
+     * @param amount value of each sector
      */
     private void drawPie(Canvas canvas, float amount,int i) {
-        mPaintOuter.setColor(mCurrentColor);
-        float mAngle = 360  * amount / mMaxValue;
+        mPaint1.setColor(mCurrentColor);
+        float mAngle = 360 * curtFraction * amount / mMaxValue;
         RectF oval = new RectF(mCenterX - mRadius, mCenterY - mRadius,mCenterX + mRadius,mCenterY + mRadius);
-        canvas.drawArc(oval, mStartAngle, mAngle, true, mPaintOuter);
+        canvas.drawArc(oval, mStartAngle, mAngle, true, mPaint1);
         mStartAngle += mAngle;
     }
 
     /**
-     * 旋转后的饼图
+     * draw small sector
      */
     private void drawPieTouch(Canvas canvas, float amount,int i) {
-        mPaintOuter.setColor(mCurrentColor);
-        float mAngle = 360  * amount / mMaxValue;
-        float mRadiusTemp = mRadius ;
+        mPaint1.setColor(mCurrentColor);
+        float mAngle = 360 * curtFraction * amount / mMaxValue;
+        float mRadiusTemp = mRadius * curtFractionTouch;
         RectF oval = new RectF(mCenterX - mRadiusTemp, mCenterY - mRadiusTemp,mCenterX + mRadiusTemp,mCenterY + mRadiusTemp);
-        canvas.drawArc(oval, mStartAngle + mAngle , mAngle - mAngle  * 2, true, mPaintOuter);
+        canvas.drawArc(oval, mStartAngle + mAngle * curtFractionTouch2, mAngle - mAngle * curtFractionTouch2 * 2, true, mPaint1);
         mStartAngle += mAngle;
-        canvas.drawText(mPieStringList.get(i),getMeasuredWidth()/2,getMeasuredHeight()/4,mPaintCenter);
+        canvas.drawText(mPieStringList.get(i),getMeasuredWidth()/2,getMeasuredHeight()/4,mPaint2);
+    }
+
+    /**
+     * @param text center text
+     */
+    public void setCenterText(String text) {
+        this.text = text;
     }
 
     @Override
@@ -228,7 +279,8 @@ public class AnimatePieChartView extends View {
             mCurrentColor = mPieColorList.get(i);
             if (i == mIndex) {
                 canvas.save();
-                canvas.translate(0,TRANS_DIS);
+                //选中的那一块向上平移20
+//                canvas.translate(0,-20);
                 drawPieTouch(canvas, mPieValueList.get(i),i);
                 canvas.restore();
             } else {
@@ -236,27 +288,27 @@ public class AnimatePieChartView extends View {
             }
         }
         canvas.drawCircle(mCenterX, mCenterY,
-                circleRadius + mShaderSize, mPaintShadow);
-        mPaintCenter.setColor(centerColor);
+                circleRadius + mShaderSize, mPaint3);
+        mPaint2.setColor(centerColor);
         //中心圆
-//        canvas.drawCircle(mCenterX, mCenterY, circleRadius, mPaintCenter);
-//        if (text != null) {
-//            mPaintCenter.setColor(Color.BLACK);
-//            canvas.drawText(text, mCenterX, mCenterY + mTextSize / 2, mPaintCenter);
-//        }
-    }
-
-    public void setCenterText(String text){
-        this.text=text;
+//        canvas.drawCircle(mCenterX, mCenterY, circleRadius, mPaint2);
+        if (text != null) {
+            mPaint2.setColor(Color.BLACK);
+            canvas.drawText(text, mCenterX, mCenterY + mTextSize / 2, mPaint2);
+        }
     }
 
     /**
-     *
-     * 旋转选中的某一项
+     * touch transfer
+     * @param i mIndex for params list
      */
     public void onTouchPie(int i) {
         mIndex = i;
+        curtFractionTouch = 1f;
+        curtFractionTouch2 = 0f;
+
         float angle = getRotationAngle(i);
+
         ValueAnimator animatorRotation;
         animatorRotation = ValueAnimator.ofFloat(mStartAngle, mStartAngle + angle);
         animatorRotation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -270,15 +322,52 @@ public class AnimatePieChartView extends View {
         int time = (int) (1000 * Math.abs(angle) / 360);
 
         animatorRotation.setDuration(time);
+        animatorTouch.setStartDelay(time);
+
         animatorRotation.start();
+        animatorTouch.start();
     }
 
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                touchX = event.getX();
+//                touchY = event.getY();
+//                break;
+//            case MotionEvent.ACTION_UP:
+//
+//                setDrawingCacheEnabled(true);
+//                Bitmap bitmap = getDrawingCache();
+//                if (bitmap == null) {
+//                    break;
+//                }
+//                int pixel = bitmap.getPixel((int) touchX, (int) touchY);
+//                setDrawingCacheEnabled(false);
+//
+//                int i = 0;
+//                for (int color : mPieColorList) {
+//                    if (pixel == color) {
+//                        onTouchPie(i);
+//                        break;
+//                    }
+//                    i++;
+//                }
+//                break;
+//        }
+//        return true;
+//    }
+
     /**
-     * 饼图的各个属性
+     * set pie chart params
      *
+     * @param pieList pie params list
      */
     public void setPie(List<PieData> pieList) {
         mMaxValue = 0;
+        curtFractionTouch = 1f;
+        curtFractionTouch2 = 0f;
+
         mPieColorList = new ArrayList<>();
         mPieStringList = new ArrayList<>();
         mPieValueList = new ArrayList<>();
