@@ -21,6 +21,7 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<CommonViewHo
     private LayoutInflater mLayoutInflater;
     private List<T> mDataList;
     private int mLayoutId;
+    private int mFixX;
     private ArrayList<View> mMoveViewList = new ArrayList<>();
 
     public CommonAdapter(Context context, List<T> dataList, int layoutId) {
@@ -40,6 +41,7 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<CommonViewHo
         CommonViewHolder holder = new CommonViewHolder(itemView);
         //获取可滑动的view布局
         LinearLayout moveLayout = holder.getView(R.id.id_move_layout);
+        moveLayout.scrollTo(mFixX, 0);
         mMoveViewList.add(moveLayout);
         return holder;
     }
@@ -58,5 +60,9 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<CommonViewHo
 
     public ArrayList<View> getMoveViewList(){
         return mMoveViewList;
+    }
+
+    public void setFixX(int fixX){
+        mFixX=fixX;
     }
 }

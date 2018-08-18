@@ -204,6 +204,8 @@ public class HRecyclerView extends RelativeLayout {
                 break;
             case MotionEvent.ACTION_UP:
                 mFixX = mMoveOffsetX; //设置最大水平平移的宽度
+                //每次左右滑动都要更新CommonAdapter中的mFixX的值
+                ((CommonAdapter)mAdapter).setFixX(mFixX);
                 break;
 
         }
